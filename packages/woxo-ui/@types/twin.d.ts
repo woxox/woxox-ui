@@ -1,7 +1,7 @@
 import "twin.macro";
 import { css as cssImport } from "@emotion/react";
-import styledImport from "@emotion/styled";
 import { CSSInterpolation } from "@emotion/serialize";
+import styledImport from "@emotion/styled";
 
 declare module "twin.macro" {
   // The styled and css imports
@@ -11,7 +11,7 @@ declare module "twin.macro" {
 
 declare module "react" {
   // The tw and css prop
-  interface DOMAttributes<T> {
+  interface DOMAttributes<T> extends T {
     tw?: string;
     css?: CSSInterpolation;
   }

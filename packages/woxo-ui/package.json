@@ -5,6 +5,7 @@
   "module": "dist/esm/index.js",
   "types": "dist/types/index.d.ts",
   "license": "MIT",
+  "type": "commonjs",
   "files": [
     "dist"
   ],
@@ -28,7 +29,7 @@
     "babel-loader": "^9.1.2",
     "babel-plugin-macros": "^3.1.0",
     "babel-plugin-twin": "^1.1.0",
-    "eslint-config-custom": "workspace:*",
+    "eslint-config-woxo": "workspace:*",
     "rollup": "^3.14.0",
     "rollup-plugin-babel": "^4.4.0",
     "rollup-plugin-commonjs": "^10.1.0",
@@ -42,9 +43,11 @@
     "@emotion/react": "^11.10.6",
     "@emotion/styled": "^11.10.6",
     "@types/react": "^18.0.28",
+    "react": "^18.2.0",
     "tailwindcss": "^3.2.7",
     "twin.macro": "^3.1.0",
-    "react": "^18.2.0"
+    "@emotion/serialize": "^1.1.1",
+    "path-normalize": "^6.0.10"
   },
   "babelMacros": {
     "twin": {

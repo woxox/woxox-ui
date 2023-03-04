@@ -1,40 +1,41 @@
-import babel from '@rollup/plugin-babel';
-import resolve from "@rollup/plugin-node-resolve";
-import commonjs from "@rollup/plugin-commonjs";
-import typescript from "@rollup/plugin-typescript";
-import dts from "rollup-plugin-dts";
-import json from "@rollup/plugin-json";
-import peerDepsExternal from 'rollup-plugin-peer-deps-external'
-import { terser } from 'rollup-plugin-terser';
+// import dts from 'rollup-plugin-dts';
+import peerDepsExternal from "rollup-plugin-peer-deps-external";
+import { terser } from "rollup-plugin-terser";
 
-const extensions = ['.ts', '.tsx', '.js', '.jsx'];
+import babel from "@rollup/plugin-babel";
+import commonjs from "@rollup/plugin-commonjs";
+import json from "@rollup/plugin-json";
+import resolve from "@rollup/plugin-node-resolve";
+// import typescript from '@rollup/plugin-typescript';
+
+const extensions = [".ts", ".tsx", ".js", ".jsx"];
 
 export default [
     {
         input: "src/index.tsx",
         output: [
             {
-                dir: 'dist/cjs',
+                dir: "dist/cjs",
                 format: "cjs",
                 sourcemap: true,
             },
             {
-                dir: 'dist/esm',
+                dir: "dist/esm",
                 format: "esm",
                 sourcemap: true,
                 preserveModules: true,
-                preserveModulesRoot: 'src',
+                preserveModulesRoot: "src",
             },
         ],
         plugins: [
             babel({
                 extensions,
-                babelHelpers: 'bundled',
-                include: ['src/**/*'],
-                exclude: 'node_modules/**',
+                babelHelpers: "bundled",
+                include: ["src/**/*"],
+                exclude: "node_modules/**",
             }),
             resolve({ extensions }),
-            commonjs({ include: 'node_modules/**' }),
+            commonjs({ include: "node_modules/**" }),
             peerDepsExternal(),
             json(),
             terser(),
