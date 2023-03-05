@@ -8,13 +8,13 @@ export const parameters = {
       date: /Date$/,
     },
   },
-  backgrounds: {
-    default: 'dark',
-  },
-  darkMode: {
-    // Override the default dark theme
-    dark: { ...themes.dark, appBg: '#212121' },
-    // Override the default light theme
-    light: { ...themes.normal, appBg: 'white' }
-  }
+  // backgrounds: {
+  // default: 'dark',
+  // },
+  // darkMode: {
+  //   // Override the default dark theme
+  //   dark: { ...themes.dark, appBg: '#212121' },
+  //   // Override the default light theme
+  //   light: { ...themes.normal, appBg: 'white' }
+  // }
 }
