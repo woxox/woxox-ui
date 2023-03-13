@@ -1,7 +1,7 @@
-import { themes } from '@storybook/theming';
+import { ThemeProvider } from '@woxo/ui';
 
 export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+  actions: { argTypesRegex: '^on[A-Z].*' },
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -17,4 +17,14 @@ export const parameters = {
   //   // Override the default light theme
   //   light: { ...themes.normal, appBg: 'white' }
   // }
-}
+};
+
+export const decorators = [
+  (Story, context) => {
+    return (
+      <ThemeProvider>
+        <Story {...context} />
+      </ThemeProvider>
+    );
+  },
+];
