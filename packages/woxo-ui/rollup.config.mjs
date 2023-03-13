@@ -6,6 +6,7 @@ import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
+import swc, { minify } from "rollup-plugin-swc3";
 // import typescript from '@rollup/plugin-typescript';
 
 const extensions = [".ts", ".tsx", ".js", ".jsx"];
@@ -19,6 +20,31 @@ export default [
                 format: "cjs",
                 sourcemap: true,
             },
+        ],
+        plugins: [
+            // babel({
+            //     extensions,
+            //     babelHelpers: "bundled",
+            //     include: ["src/**/*"],
+            //     exclude: "node_modules/**",
+            // }),
+            swc({
+                extensions,
+                include: ["src/**/*"],
+                exclude: "node_modules/**",
+                sourceMaps: true,
+            }),
+            commonjs(),
+            // resolve({ extensions }),
+            peerDepsExternal(),
+            json(),
+            // minify({ sourceMap: true })
+            // terser(),
+            // typescript({ tsconfig: "./tsconfig.json" }),
+        ],
+    }, {
+        input: "src/index.tsx",
+        output: [
             {
                 dir: "dist/esm",
                 format: "esm",
@@ -28,17 +54,24 @@ export default [
             },
         ],
         plugins: [
-            babel({
+            // babel({
+            //     extensions,
+            //     babelHelpers: "bundled",
+            //     include: ["src/**/*"],
+            //     exclude: "node_modules/**",
+            // }),
+            swc({
                 extensions,
-                babelHelpers: "bundled",
                 include: ["src/**/*"],
                 exclude: "node_modules/**",
+                sourceMaps: true,
             }),
-            resolve({ extensions }),
-            commonjs({ include: "node_modules/**" }),
+            commonjs(),
+            // resolve({ extensions }),
             peerDepsExternal(),
             json(),
-            terser(),
+            // minify({ sourceMap: true })
+            // terser(),
             // typescript({ tsconfig: "./tsconfig.json" }),
         ],
     },
