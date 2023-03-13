@@ -131,7 +131,6 @@ importers:
       rollup-plugin-terser: ^7.0.2
       tailwindcss: ^3.2.7
       tsconfig: workspace:*
-      twin.macro: ^3.1.0
       typescript: ^4.9.5
     dependencies:
       '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
@@ -141,7 +140,6 @@ importers:
       path-normalize: 6.0.10
       react: 18.2.0
       tailwindcss: 3.2.7_postcss@8.4.21
-      twin.macro: 3.1.0_tailwindcss@3.2.7
     devDependencies:
       '@babel/preset-env': 7.20.2_@babel+core@7.21.0
       '@babel/preset-react': 7.18.6_@babel+core@7.21.0
@@ -514,6 +512,7 @@ packages:
     hasBin: true
     dependencies:
       '@babel/types': 7.21.2
+    dev: true
 
   /@babel/plugin-bugfix-safari-id-destructuring-collision-in-function-expression/7.18.6_@babel+core@7.21.0:
     resolution: {integrity: sha512-Dgxsyg54Fx1d4Nge8UnvTrED63vrwOdPmyvPzlNN/boaliRP54pm3pGzZD1SJUwrBA+Cs/xdG8kXX6Mn/RfISQ==}
@@ -1590,6 +1589,7 @@ packages:
       '@babel/code-frame': 7.18.6
       '@babel/parser': 7.21.2
       '@babel/types': 7.21.2
+    dev: true
 
   /@babel/traverse/7.21.2:
     resolution: {integrity: sha512-ts5FFU/dSUPS13tv8XiEObDu9K+iagEKME9kAbaP7r0Y9KtZJZ+NGndDvWoRAYNpeWafbpFeki3q9QoMD6gxyw==}
@@ -9481,10 +9481,6 @@ packages:
     resolution: {integrity: sha512-FT1yDzDYEoYWhnSGnpE/4Kj1fLZkDFyqRb7fNt6FdYOSxlUWAtp42Eh6Wb0rGIv/m9Bgo7x4GhQbm5Ys4SG5ow==}
     dev: true
 
-  /lodash.get/4.4.2:
-    resolution: {integrity: sha512-z+Uw/vLuy6gQe8cfaFWD7p0wVv8fJl3mbzXh33RS+0oW2wvUqiRXiQ69gLWSLpgB5/6sU+r6BlQR0MBILadqTQ==}
-    dev: false
-
   /lodash.merge/4.6.2:
     resolution: {integrity: sha512-0KpjqXRVvrYyCsX1swR/XTK0va6VQkQM6MNo7PqW77ByjAhoARA8EfrP1N4+KlKj8YS0ZUCtRT/YUuhyYDujIQ==}
 
@@ -12804,21 +12800,6 @@ packages:
       turbo-windows-64: 1.8.3
       turbo-windows-arm64: 1.8.3
     dev: true
-
-  /twin.macro/3.1.0_tailwindcss@3.2.7:
-    resolution: {integrity: sha512-7DSR/xdvSaAqhTM4JptBgI+1IzXQR5v+2hp0CDMmHMjlm44IBEewU8MeqPlXmFgQI06zpLyJMaKRbJu96drAJw==}
-    engines: {node: '>=16.14.0'}
-    peerDependencies:
-      tailwindcss: ^3.2.4
-    dependencies:
-      '@babel/template': 7.20.7
-      babel-plugin-macros: 3.1.0
-      chalk: 4.1.2
-      lodash.get: 4.4.2
-      lodash.merge: 4.6.2
-      postcss-selector-parser: 6.0.11
-      tailwindcss: 3.2.7_postcss@8.4.21
-    dev: false
 
   /type-check/0.3.2:
     resolution: {integrity: sha512-ZCmOJdvOWDBYJlzAoFkC+Q0+bUyEOS1ltgp1MGU03fqHG+dbi9tBFU2Rd9QKiDZFAYrhPh2JUf7rZRIuHRKtOg==}
