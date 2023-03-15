@@ -1,8 +1,9 @@
-import React, { useCallback } from "react";
-import tw, { css } from "twin.macro";
+import React, { useCallback } from 'react';
+
+import normalize from 'path-normalize';
+import tw from 'twin.macro';
 // import ArrowRightIcon from './arrow-right.svg';
 // import { join, normalize } from "path";
-import normalize from "path-normalize";
 // import { ComponentBaseProps } from '@components/types';
 
 export interface BreadCrumbPath {
@@ -10,8 +11,7 @@ export interface BreadCrumbPath {
   name?: string;
 }
 
-export interface BreadCrumbProps
-  extends Omit<React.HTMLAttributes<HTMLDivElement>, "onClick"> {
+export interface BreadCrumbProps extends Omit<React.HTMLAttributes<HTMLDivElement>, 'onClick'> {
   paths: BreadCrumbPath[];
   href?: boolean;
   onClick?: (path: string) => void;
@@ -42,19 +42,19 @@ export const BreadCrumb: React.FC<BreadCrumbProps> = ({
           paths
             .slice(0, index + 1)
             .flatMap(({ label, name }) => name ?? label)
-            .join("/")
+            .join('/'),
         );
 
         onClick(resultPath);
       }
     },
-    [onClick, paths]
+    [onClick, paths],
   );
 
   return (
     <div css={[tw`flex overflow-hidden`, tw`p-3`, tw`text-xs`]} {...props}>
       {paths.map((path, idx, arr) => (
-        <React.Fragment key={path.label + idx}>
+        <React.Fragment key={path.label}>
           <span
             css={[
               tw`block`,

@@ -11,15 +11,9 @@ module.exports = {
     'plugin:prettier/recommended',
   ],
   parser: '@typescript-eslint/parser',
-  // parserOptions: {
-  //   ecmaFeatures: {
-  //     jsx: true,
-  //   },
-  //   ecmaVersion: 'latest',
-  //   sourceType: 'module',
-  //   project: './tsconfig.json',
-  //   tsconfigRootDir: __dirname,
-  // },
+  parserOptions: {
+    project: 'tsconfig.json'
+  },
   ignorePatterns: [
     '.eslintrc.js',
     'vite.config.ts',
@@ -27,7 +21,9 @@ module.exports = {
     'postcss.config.js',
     'prettier.config.js',
     'eslintrc.js',
-    'rollup.config.mjs'
+    'rollup.config.mjs',
+    'dist',
+    'node_modules'
   ],
   plugins: ['react', '@typescript-eslint', 'eslint-plugin-import-helpers'],
   rules: {
@@ -72,5 +68,6 @@ module.exports = {
     'react/button-has-type': 'off',
     '@typescript-eslint/naming-convention': 'warn',
     'react/no-unknown-property': ['error', { ignore: ['css'] }],
+    'import/prefer-default-export': 'off'
   },
 };

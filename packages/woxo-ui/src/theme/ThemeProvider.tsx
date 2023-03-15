@@ -1,36 +1,56 @@
-import React, { useState } from 'react';
+import React, { useEffect, useMemo, useState } from 'react';
+
 import { GlobalStyles } from 'twin.macro';
 
 export type ThemeMode = 'dark' | 'light';
 export interface Theme {
   mode: ThemeMode;
+  autoMode: boolean;
 }
-export interface ThemeContext extends Theme {
-  setTheme: (theme: Theme) => void;
-}
+export interface ThemeContextType extends Theme {}
 
 const defaultTheme: Theme = {
   mode: window.matchMedia('(prefers-color-scheme: dark)').matches ? 'dark' : 'light',
+  autoMode: true,
 };
-const defaultContext: ThemeContext = {
+const defaultContext: ThemeContextType = {
   ...defaultTheme,
-  setTheme: () => {},
 };
 
-export const ThemeContext = React.createContext<ThemeContext>(defaultContext);
+export const ThemeContext = React.createContext<ThemeContextType>(defaultContext);
 
 interface ThemeProviderProps {
   children?: React.ReactNode;
-  customTheme?: Theme;
+  customTheme?: Partial<Theme>;
 }
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ customTheme, children }) => {
-  const [theme, setTheme] = useState<Theme>({
-    ...defaultTheme,
-    ...customTheme,
-  });
+  const [mode, setMode] = useState<ThemeMode>(defaultTheme.mode);
+
+  const theme = useMemo(() => {
+    return {
+      ...defaultTheme,
+      ...customTheme,
+      mode,
+    };
+  }, [customTheme, mode]);
+
+  useEffect(() => {
+    console.log('theme', theme);
+  }, [theme]);
+
+  useEffect(() => {
+    const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+    media.addEventListener('change', (schema) => {
+      if (theme.autoMode) {
+        if (schema.matches) setMode('dark');
+        else setMode('light');
+      }
+    });
+  }, [theme.autoMode]);
 
   return (
-    <ThemeContext.Provider value={{ ...theme, setTheme }}>
+    <ThemeContext.Provider value={theme}>
       <>
         <GlobalStyles />
         {children}

@@ -1,15 +1,28 @@
-// import dts from 'rollup-plugin-dts';
 import peerDepsExternal from "rollup-plugin-peer-deps-external";
-import { terser } from "rollup-plugin-terser";
+// import { terser } from "rollup-plugin-terser";
 
 import babel from "@rollup/plugin-babel";
 import commonjs from "@rollup/plugin-commonjs";
 import json from "@rollup/plugin-json";
 import resolve from "@rollup/plugin-node-resolve";
-import swc, { minify } from "rollup-plugin-swc3";
-// import typescript from '@rollup/plugin-typescript';
+import { minify } from "rollup-plugin-swc3";
 
 const extensions = [".ts", ".tsx", ".js", ".jsx"];
+
+const plugins = [
+    babel({
+        extensions,
+        babelHelpers: "bundled",
+        include: ["src/**/*"],
+        exclude: "node_modules/**",
+    }),
+    commonjs(),
+    resolve({ extensions }),
+    peerDepsExternal(),
+    json(),
+    minify({ sourceMap: true })
+    // terser(),
+]
 
 export default [
     {
@@ -21,27 +34,7 @@ export default [
                 sourcemap: true,
             },
         ],
-        plugins: [
-            // babel({
-            //     extensions,
-            //     babelHelpers: "bundled",
-            //     include: ["src/**/*"],
-            //     exclude: "node_modules/**",
-            // }),
-            swc({
-                extensions,
-                include: ["src/**/*"],
-                exclude: "node_modules/**",
-                sourceMaps: true,
-            }),
-            commonjs(),
-            // resolve({ extensions }),
-            peerDepsExternal(),
-            json(),
-            // minify({ sourceMap: true })
-            // terser(),
-            // typescript({ tsconfig: "./tsconfig.json" }),
-        ],
+        plugins,
     }, {
         input: "src/index.tsx",
         output: [
@@ -53,31 +46,6 @@ export default [
                 preserveModulesRoot: "src",
             },
         ],
-        plugins: [
-            // babel({
-            //     extensions,
-            //     babelHelpers: "bundled",
-            //     include: ["src/**/*"],
-            //     exclude: "node_modules/**",
-            // }),
-            swc({
-                extensions,
-                include: ["src/**/*"],
-                exclude: "node_modules/**",
-                sourceMaps: true,
-            }),
-            commonjs(),
-            // resolve({ extensions }),
-            peerDepsExternal(),
-            json(),
-            // minify({ sourceMap: true })
-            // terser(),
-            // typescript({ tsconfig: "./tsconfig.json" }),
-        ],
+        plugins,
     },
-    // {
-    //     input: "dist/types/index.d.ts",
-    //     output: [{ file: "dist/index.d.ts", format: "esm" }],
-    //     plugins: [dts()],
-    // },
 ];
