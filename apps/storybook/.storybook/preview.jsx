@@ -1,5 +1,4 @@
 import { ThemeProvider } from '@woxo/ui';
-import { useEffect, useState } from 'react';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },
@@ -8,6 +7,9 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  cssUserPrefs: {
+    'prefers-color-scheme': 'dark',
   },
   // backgrounds: {
   // default: 'dark',
@@ -22,29 +24,8 @@ export const parameters = {
 
 export const decorators = [
   (Story, context) => {
-    const [mode, setMode] = useState('dark');
-
-    useEffect(() => {
-      const media = window.matchMedia('(prefers-color-scheme: dark)');
-
-      const handleChange = (isDark) => {
-        if (isDark) setMode('dark');
-        else setMode('light');
-      };
-
-      handleChange(media.matches);
-      media.addEventListener('change', (schme) => {
-        console.log(schme.matches);
-        handleChange(schme.matches);
-      });
-    }, []);
-
-    useEffect(() => {
-      console.log(mode);
-    }, [mode]);
-
     return (
-      <ThemeProvider customTheme={{ mode }}>
+      <ThemeProvider>
         <Story {...context} />
       </ThemeProvider>
     );

@@ -8,9 +8,11 @@
     "build": "build-storybook"
   },
   "dependencies": {
+    "@storybook/react": "^6.5.16",
     "@woxo/ui": "workspace:*",
     "react": "^18.2.0",
-    "react-dom": "^18.2.0"
+    "react-dom": "^18.2.0",
+    "rollup-plugin-terser": "^7.0.2"
   },
   "devDependencies": {
     "@babel/core": "^7.21.0",
@@ -20,7 +22,6 @@
     "@storybook/addon-links": "^6.5.16",
     "@storybook/builder-vite": "^0.4.2",
     "@storybook/cli": "^6.5.16",
-    "@storybook/react": "^6.5.16",
     "@storybook/testing-library": "^0.0.13",
     "@types/react": "^18.0.27",
     "@types/react-dom": "^18.0.10",
