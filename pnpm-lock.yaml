@@ -13,8 +13,8 @@ importers:
       eslint-config-woxo: link:packages/eslint-config-woxo
       eslint-plugin-prettier: 4.2.1_6l7kvkw7pbq7sx3iiqo67pyozi
       prettier: 2.8.7
-      prettier-plugin-tailwindcss: 0.2.5_prettier@2.8.7
-      turbo: 1.8.6
+      prettier-plugin-tailwindcss: 0.2.6_prettier@2.8.7
+      turbo: 1.8.8
 
   apps/storybook:
     specifiers:
@@ -88,7 +88,7 @@ importers:
     dependencies:
       eslint: 7.32.0
       eslint-config-next: 13.0.0_jofidmxrjzhj7l6vknpw5ecvfe
-      eslint-config-turbo: 1.8.6_eslint@7.32.0
+      eslint-config-turbo: 1.8.8_eslint@7.32.0
       eslint-plugin-prettier: 4.2.1_2fbugv7hbzbahj5qm3ztcno6by
       tsconfig: link:../tsconfig
     devDependencies:
@@ -111,6 +111,43 @@ importers:
   packages/tsconfig:
     specifiers: {}
 
+  packages/woxo-icon:
+    specifiers:
+      '@rollup/plugin-commonjs': ^24.0.1
+      '@rollup/plugin-json': ^6.0.0
+      '@rollup/plugin-node-resolve': ^15.0.1
+      '@rollup/plugin-typescript': ^11.0.0
+      '@swc-node/register': ^1.6.3
+      '@swc/core': ^1.3.40
+      '@types/react': ^18.0.28
+      eslint-config-woxo: workspace:*
+      react: ^18.2.0
+      rollup: ^3.14.0
+      rollup-plugin-commonjs: ^10.1.0
+      rollup-plugin-dts: ^5.2.0
+      rollup-plugin-peer-deps-external: ^2.2.4
+      rollup-plugin-swc3: ^0.8.1
+      tsconfig: workspace:*
+      typescript: ^4.9.5
+    dependencies:
+      '@swc-node/register': 1.6.3_iam32obddcem3ix5xtmuuzzkny
+      react: 18.2.0
+      rollup-plugin-swc3: 0.8.1_feegecg37wvggqa3dzbwmzwwhe
+    devDependencies:
+      '@rollup/plugin-commonjs': 24.0.1_rollup@3.18.0
+      '@rollup/plugin-json': 6.0.0_rollup@3.18.0
+      '@rollup/plugin-node-resolve': 15.0.1_rollup@3.18.0
+      '@rollup/plugin-typescript': 11.0.0_fn2onl6nbsljlgjr3jlzr6w7we
+      '@swc/core': 1.3.40
+      '@types/react': 18.0.28
+      eslint-config-woxo: link:../eslint-config-woxo
+      rollup: 3.18.0
+      rollup-plugin-commonjs: 10.1.0_rollup@3.18.0
+      rollup-plugin-dts: 5.2.0_fn2onl6nbsljlgjr3jlzr6w7we
+      rollup-plugin-peer-deps-external: 2.2.4_rollup@3.18.0
+      tsconfig: link:../tsconfig
+      typescript: 4.9.5
+
   packages/woxo-ui:
     specifiers:
       '@babel/preset-env': ^7.20.2
@@ -128,6 +165,7 @@ importers:
       '@rollup/plugin-typescript': ^11.0.0
       '@swc/core': ^1.3.40
       '@types/react': ^18.0.28
+      '@woxo/icon': workspace:*
       babel-loader: ^9.1.2
       babel-plugin-macros: ^3.1.0
       babel-plugin-twin: ^1.1.0
@@ -148,6 +186,7 @@ importers:
       '@emotion/react': 11.10.6_pmekkgnqduwlme35zpnqhenc34
       '@emotion/serialize': 1.1.1
       '@emotion/styled': 11.10.6_oouaibmszuch5k64ms7uxp2aia
+      '@woxo/icon': link:../woxo-icon
       framer-motion: 10.9.1_react@18.2.0
       path-normalize: 6.0.10
       react: 18.2.0
@@ -1979,6 +2018,10 @@ packages:
     transitivePeerDependencies:
       - supports-color
 
+  /@fastify/deepmerge/1.3.0:
+    resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
+    dev: false
+
   /@gar/promisify/1.1.3:
     resolution: {integrity: sha512-k2Ty1JcVojjJFwrg/ThKi2ujJ7XNLYaFGNB/bWT9wGR+oSMJHMa5w+CUq6p/pVrKeNNgA7pCqEcjSnHVoqJQFw==}
     dev: false
@@ -2347,6 +2390,14 @@ packages:
       rollup: 3.18.0
       typescript: 4.9.5
     dev: true
+
+  /@rollup/pluginutils/4.2.1:
+    resolution: {integrity: sha512-iKnFXr7NkdZAIHiIWE+BX5ULi/ucVFYWD6TbAV+rZctiRTY2PL6tsIKhoIOaoskiWAkgu+VsbXgUVDNLHf+InQ==}
+    engines: {node: '>= 8.0.0'}
+    dependencies:
+      estree-walker: 2.0.2
+      picomatch: 2.3.1
+    dev: false
 
   /@rollup/pluginutils/5.0.2_rollup@3.18.0:
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
@@ -3788,6 +3839,40 @@ packages:
       resolve-from: 5.0.0
     dev: false
 
+  /@swc-node/core/1.10.2_@swc+core@1.3.40:
+    resolution: {integrity: sha512-3rx5Wid5BfsBLV6anUC78Dzc23gNDre4AbrH9+QlCg17SKqElNcDojU6MVwlB7knzu+3w8aRJO+4to1wzuCY3Q==}
+    engines: {node: '>= 10'}
+    peerDependencies:
+      '@swc/core': '>= 1.3'
+    dependencies:
+      '@swc/core': 1.3.40
+    dev: false
+
+  /@swc-node/register/1.6.3_iam32obddcem3ix5xtmuuzzkny:
+    resolution: {integrity: sha512-B690PKyws/c1aJWU2VfgOMyJ3OJ2fHi54keUOsaxUwNkT5YkuqK8nXqQI5B+glQTv05wuSSlrBzyCYgFzmw2Vg==}
+    peerDependencies:
+      '@swc/core': '>= 1.3'
+      typescript: '>= 4.3'
+    dependencies:
+      '@swc-node/core': 1.10.2_@swc+core@1.3.40
+      '@swc-node/sourcemap-support': 0.3.0
+      '@swc/core': 1.3.40
+      colorette: 2.0.19
+      debug: 4.3.4
+      pirates: 4.0.5
+      tslib: 2.5.0
+      typescript: 4.9.5
+    transitivePeerDependencies:
+      - supports-color
+    dev: false
+
+  /@swc-node/sourcemap-support/0.3.0:
+    resolution: {integrity: sha512-gqBJSmJMWomZFxlppaKea7NeAqFrDrrS0RMt24No92M3nJWcyI9YKGEQKl+EyJqZ5gh6w1s0cTklMHMzRwA1NA==}
+    dependencies:
+      source-map-support: 0.5.21
+      tslib: 2.5.0
+    dev: false
+
   /@swc/core-darwin-arm64/1.3.37:
     resolution: {integrity: sha512-iIyVqqioUpVeT/hbBVfkrsjfCyL4idNH+LVKGmoTAWaTTSB0+UNhNuA7Wh2CqIHWh1Mv7IlumitWPcqsVDdoEw==}
     engines: {node: '>=10'}
@@ -3803,7 +3888,6 @@ packages:
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-darwin-x64/1.3.37:
@@ -3821,7 +3905,6 @@ packages:
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-arm-gnueabihf/1.3.37:
@@ -3839,7 +3922,6 @@ packages:
     cpu: [arm]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-arm64-gnu/1.3.37:
@@ -3857,7 +3939,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-arm64-musl/1.3.37:
@@ -3875,7 +3956,6 @@ packages:
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-x64-gnu/1.3.37:
@@ -3893,7 +3973,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-linux-x64-musl/1.3.37:
@@ -3911,7 +3990,6 @@ packages:
     cpu: [x64]
     os: [linux]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-win32-arm64-msvc/1.3.37:
@@ -3929,7 +4007,6 @@ packages:
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-win32-ia32-msvc/1.3.37:
@@ -3947,7 +4024,6 @@ packages:
     cpu: [ia32]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core-win32-x64-msvc/1.3.37:
@@ -3965,7 +4041,6 @@ packages:
     cpu: [x64]
     os: [win32]
     requiresBuild: true
-    dev: true
     optional: true
 
   /@swc/core/1.3.37:
@@ -4000,7 +4075,6 @@ packages:
       '@swc/core-win32-arm64-msvc': 1.3.40
       '@swc/core-win32-ia32-msvc': 1.3.40
       '@swc/core-win32-x64-msvc': 1.3.40
-    dev: true
 
   /@szmarczak/http-timer/1.1.2:
     resolution: {integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==}
@@ -5728,6 +5802,10 @@ packages:
     resolution: {integrity: sha512-qiBjkpbMLO/HL68y+lh4q0/O1MZFj2RX6X/KmMa3+gJD3z+WwI1ZzDHysvqHGS3mP6mznPckpXmw1nI9cJjyRg==}
     hasBin: true
 
+  /colorette/2.0.19:
+    resolution: {integrity: sha512-3tlv/dIP7FWvj3BsbHrGLJ6l/oKh1O3TcgBqMn+yyCagOxc23fyzDS6HypQbgxWbkpDnf52p1LuR4eWDQ/K9WQ==}
+    dev: false
+
   /combined-stream/1.0.8:
     resolution: {integrity: sha512-FQN4MRfuJeHf7cBbBMJFXhKSDq+2kAArBlmRBvcvFE5BB1HZKXtSFASDhdlz9zOYwxh8lDdnvmMOe/+5cdoEdg==}
     engines: {node: '>= 0.8'}
@@ -6669,13 +6747,13 @@ packages:
     dependencies:
       eslint: 7.32.0
 
-  /eslint-config-turbo/1.8.6_eslint@7.32.0:
-    resolution: {integrity: sha512-LSMqrHmFeQcYRuBnzrzw+B2bJ3+o8wxPkRwfK0Y+SSLsq2F/niRJ2kqB8j4uOSCfxybHHpFEB2CgUpQiiyfeoQ==}
+  /eslint-config-turbo/1.8.8_eslint@7.32.0:
+    resolution: {integrity: sha512-+yT22sHOT5iC1sbBXfLIdXfbZuiv9bAyOXsxTxFCWelTeFFnANqmuKB3x274CFvf7WRuZ/vYP/VMjzU9xnFnxA==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
       eslint: 7.32.0
-      eslint-plugin-turbo: 1.8.6_eslint@7.32.0
+      eslint-plugin-turbo: 1.8.8_eslint@7.32.0
     dev: false
 
   /eslint-import-resolver-node/0.3.7:
@@ -6963,8 +7041,8 @@ packages:
       semver: 6.3.0
       string.prototype.matchall: 4.0.8
 
-  /eslint-plugin-turbo/1.8.6_eslint@7.32.0:
-    resolution: {integrity: sha512-LieXzur+4XtIsLst8GdupTMhvGn2ebFetG3AVErh2jHBy1EobPHbatjcdNZQMy5EsdG35axQVB8KFF3jo4u+OQ==}
+  /eslint-plugin-turbo/1.8.8_eslint@7.32.0:
+    resolution: {integrity: sha512-zqyTIvveOY4YU5jviDWw9GXHd4RiKmfEgwsjBrV/a965w0PpDwJgEUoSMB/C/dU310Sv9mF3DSdEjxjJLaw6rA==}
     peerDependencies:
       eslint: '>6.6.0'
     dependencies:
@@ -7189,7 +7267,6 @@ packages:
 
   /estree-walker/2.0.2:
     resolution: {integrity: sha512-Rfkk/Mp/DL7JVje3u18FxFujQlTNR2q6QfMSMB7AvCBx91NGj/ba3kCfza0f6dVDbw7YlRf/nDrn7pQrCCyQ/w==}
-    dev: true
 
   /esutils/2.0.3:
     resolution: {integrity: sha512-kVscqXk4OCp68SZ0dkgEKVi6/8ij300KBWTJq32P/dYeWTSwK41WyTxalN1eRmA5Z9UU/LX9D7FWSmV9SAYx6g==}
@@ -7806,7 +7883,6 @@ packages:
 
   /get-tsconfig/4.4.0:
     resolution: {integrity: sha512-0Gdjo/9+FzsYhXCEFueo2aY1z1tpXrxWZzP7k8ul9qt1U5o8rYJwTJYmaeHdrVosYIVYkOy2iwCJ9FdpocJhPQ==}
-    dev: true
 
   /get-value/2.0.6:
     resolution: {integrity: sha512-Ln0UQDlxH1BapMu3GPtf7CuYNwRZf2gwCuPqbyG6pB8WfmFpzqcy4xtAaAMUhnNqjMKTiCPZG2oMT3YSx8U2NA==}
@@ -8648,7 +8724,7 @@ packages:
   /is-reference/1.2.1:
     resolution: {integrity: sha512-U82MsXXiFIrjCK4otLT+o2NA2Cd2g5MLoOVXUZjIOhLurrRxpEXzI8O0KZHr3IjLvlAH1kTPYSuqer5T9ZVBKQ==}
     dependencies:
-      '@types/estree': 0.0.51
+      '@types/estree': 1.0.0
     dev: true
 
   /is-regex/1.1.4:
@@ -10448,8 +10524,8 @@ packages:
       prettier: 2.8.4
     dev: true
 
-  /prettier-plugin-tailwindcss/0.2.5_prettier@2.8.7:
-    resolution: {integrity: sha512-vZ/iKieyCx0WTxHbkf5E1rBlv/ybFk8WTT4hL5W2jlVxum2Zbe0jMUpuQdDrpa4z2vnPiJ5KIWCqL/kd16fKYg==}
+  /prettier-plugin-tailwindcss/0.2.6_prettier@2.8.7:
+    resolution: {integrity: sha512-F+7XCl9RLF/LPrGdUMHWpsT6TM31JraonAUyE6eBmpqymFvDwyl0ETHsKFHP1NG+sEfv8bmKqnTxEbWQbHPlBA==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
       '@ianvs/prettier-plugin-sort-imports': '*'
@@ -11261,6 +11337,20 @@ packages:
       rollup: 3.18.0
     dev: true
 
+  /rollup-plugin-swc3/0.8.1_feegecg37wvggqa3dzbwmzwwhe:
+    resolution: {integrity: sha512-xoHRmrGamXrz4rNfmXiTNf/6pAYY2daFOJavVsrG/HvBgsoa8lx9rtas9XiqOl5DqD04tGn8MiUwarITOPyh8A==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@swc/core': '>=1.2.165'
+      rollup: ^2.0.0 || ^3.0.0
+    dependencies:
+      '@fastify/deepmerge': 1.3.0
+      '@rollup/pluginutils': 4.2.1
+      '@swc/core': 1.3.40
+      get-tsconfig: 4.4.0
+      rollup: 3.18.0
+    dev: false
+
   /rollup-plugin-terser/7.0.2_rollup@2.79.1:
     resolution: {integrity: sha512-w3iIaU4OxcF52UUXiZNsNeuXIMDvFrr+ZXK6bFZ0Q60qyVfq4uLptoS4bbq3paG3x216eQllFZX7zt6TIImguQ==}
     deprecated: This package has been deprecated and is no longer maintained. Please use @rollup/plugin-terser
@@ -11294,7 +11384,6 @@ packages:
     hasBin: true
     optionalDependencies:
       fsevents: 2.3.2
-    dev: true
 
   /rsvp/4.8.5:
     resolution: {integrity: sha512-nfMOlASu9OnRJo1mbEk2cz0D56a1MBNrJ7orjRZQG10XDyuvwksKbuXNp6qa+kbn839HwjwhBzhFmdsaEAfauA==}
@@ -12318,65 +12407,65 @@ packages:
   /tty-browserify/0.0.0:
     resolution: {integrity: sha512-JVa5ijo+j/sOoHGjw0sxw734b1LhBkQ3bvUGNdxnVXDCX81Yx7TFgnZygxrIIWn23hbfTaMYLwRmAxFyDuFmIw==}
 
-  /turbo-darwin-64/1.8.6:
-    resolution: {integrity: sha512-VlXkQR0TEBAEyBRsvAXBax+fj1EdPKPliwBaCnRLiDUcA/8wYlKte/Kk6ubmj9E0n7U/B4keCxxHiJZqW/5Rqg==}
+  /turbo-darwin-64/1.8.8:
+    resolution: {integrity: sha512-18cSeIm7aeEvIxGyq7PVoFyEnPpWDM/0CpZvXKHpQ6qMTkfNt517qVqUTAwsIYqNS8xazcKAqkNbvU1V49n65Q==}
     cpu: [x64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-darwin-arm64/1.8.6:
-    resolution: {integrity: sha512-w4L2QLj90ex68UXxTPoqtZPl8mWzc6a1RtPjQhoxAWtZf9T2WXi813dCzYEbVUVC09/DOW/VxZRN7sb2r0KP9A==}
+  /turbo-darwin-arm64/1.8.8:
+    resolution: {integrity: sha512-ruGRI9nHxojIGLQv1TPgN7ud4HO4V8mFBwSgO6oDoZTNuk5ybWybItGR+yu6fni5vJoyMHXOYA2srnxvOc7hjQ==}
     cpu: [arm64]
     os: [darwin]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-64/1.8.6:
-    resolution: {integrity: sha512-eV245jefIhMAZskqQKalFwreC5UEdQcuHcBiWcgUk0py76fbwB7+1HfH5cmeJlb3a1sB6f3H0HHmGPmb34feCA==}
+  /turbo-linux-64/1.8.8:
+    resolution: {integrity: sha512-N/GkHTHeIQogXB1/6ZWfxHx+ubYeb8Jlq3b/3jnU4zLucpZzTQ8XkXIAfJG/TL3Q7ON7xQ8yGOyGLhHL7MpFRg==}
     cpu: [x64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-linux-arm64/1.8.6:
-    resolution: {integrity: sha512-Kiw3nyEvNU6Bpil4zE5FwhasPAOi59R4YdCmjJp0Sen6V9u+/Jij6SWwaoUdATORJLiYQBbhontWBH55B53VDw==}
+  /turbo-linux-arm64/1.8.8:
+    resolution: {integrity: sha512-hKqLbBHgUkYf2Ww8uBL9UYdBFQ5677a7QXdsFhONXoACbDUPvpK4BKlz3NN7G4NZ+g9dGju+OJJjQP0VXRHb5w==}
     cpu: [arm64]
     os: [linux]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-64/1.8.6:
-    resolution: {integrity: sha512-34BkAG9r4nE00xeMeVahaF82h8R6SO+IIOcD60fNr2p+Ch+YcQa+DbEWA/KUj3coUTIiNP5XnRCLRUYADdlxjQ==}
+  /turbo-windows-64/1.8.8:
+    resolution: {integrity: sha512-2ndjDJyzkNslXxLt+PQuU21AHJWc8f6MnLypXy3KsN4EyX/uKKGZS0QJWz27PeHg0JS75PVvhfFV+L9t9i+Yyg==}
     cpu: [x64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo-windows-arm64/1.8.6:
-    resolution: {integrity: sha512-4jWUaI7Lmonp2I3x81GruiCYd0aQsG/xDOYhuv9+j2yIgB/UHJFz/P8PWp/nziwPtGpRd/AheDlPzzyd9lWoqw==}
+  /turbo-windows-arm64/1.8.8:
+    resolution: {integrity: sha512-xCA3oxgmW9OMqpI34AAmKfOVsfDljhD5YBwgs0ZDsn5h3kCHhC4x9W5dDk1oyQ4F5EXSH3xVym5/xl1J6WRpUg==}
     cpu: [arm64]
     os: [win32]
     requiresBuild: true
     dev: true
     optional: true
 
-  /turbo/1.8.6:
-    resolution: {integrity: sha512-6IOOaa8ytgjnSCTnp3LKAd2uGBZ/Kmx8ZPlI/YMWuKMUqvkXKLbh+w76ApMgMm+faUqti+QujVWovCu2kY6KuQ==}
+  /turbo/1.8.8:
+    resolution: {integrity: sha512-qYJ5NjoTX+591/x09KgsDOPVDUJfU9GoS+6jszQQlLp1AHrf1wRFA3Yps8U+/HTG03q0M4qouOfOLtRQP4QypA==}
     hasBin: true
     requiresBuild: true
     optionalDependencies:
-      turbo-darwin-64: 1.8.6
-      turbo-darwin-arm64: 1.8.6
-      turbo-linux-64: 1.8.6
-      turbo-linux-arm64: 1.8.6
-      turbo-windows-64: 1.8.6
-      turbo-windows-arm64: 1.8.6
+      turbo-darwin-64: 1.8.8
+      turbo-darwin-arm64: 1.8.8
+      turbo-linux-64: 1.8.8
+      turbo-linux-arm64: 1.8.8
+      turbo-windows-64: 1.8.8
+      turbo-windows-arm64: 1.8.8
     dev: true
 
   /twin.macro/3.1.0_tailwindcss@3.2.7:

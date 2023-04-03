@@ -17,7 +17,6 @@ export const Button: React.FC<ButtonProps> = ({ children, ...props }) => {
         tw`border-2 rounded-lg outline-none`,
         tw`border-neutral-200 hover:border-neutral-600`,
         tw`text-sm`,
-        tw`bg-white hover:bg-white`,
         tw`transition-colors`,
         tw`appearance-none`,
         tw`text-neutral-900`,
