@@ -5,6 +5,14 @@ import { Button, List, ListItem } from '@woxo/ui';
 export const ListUsage: React.FC = () => {
   const [listItem, setListItem] = useState<ListItem[]>([]);
 
+  const handleClickListItem = useCallback(
+    (idx: number) => {
+      const filteredList = listItem.filter((item) => item.id !== `${idx}`);
+      setListItem(filteredList);
+    },
+    [listItem],
+  );
+
   const handleClickAddButton = useCallback(() => {
     const max =
       listItem.reduce((acc, { id }) => {
@@ -14,7 +22,7 @@ export const ListUsage: React.FC = () => {
 
     const newItem: ListItem = {
       id: String(max),
-      content: <div className="h-10 w-32 bg-neutral-700 text-white">{max}</div>,
+      content: <div className="h-10 rounded-lg bg-neutral-700 px-4 py-2 text-white">{max}</div>,
     };
 
     setListItem([...listItem, newItem]);
@@ -23,7 +31,7 @@ export const ListUsage: React.FC = () => {
   return (
     <div>
       <Button onClick={handleClickAddButton}>Add</Button>
-      <List listItem={listItem} />
+      <List className="w-32 py-2" listItem={listItem} onClick={handleClickListItem} />
     </div>
   );
 };

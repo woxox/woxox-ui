@@ -5,4 +5,5 @@ export * from './components/Tab';
 export * from './components/Input';
 export * from './components/Skeleton';
 export * from './components/List';
+export * from './components/Tooltip';
 export * from './theme/ThemeProvider';
