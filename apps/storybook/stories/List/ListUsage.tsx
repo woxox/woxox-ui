@@ -14,7 +14,7 @@ export const ListUsage: React.FC = () => {
 
     const newItem: ListItem = {
       id: String(max),
-      content: <div className="h-10 w-32 bg-neutral-700">{max}</div>,
+      content: <div className="h-10 w-32 bg-neutral-700 text-white">{max}</div>,
     };
 
     setListItem([...listItem, newItem]);
