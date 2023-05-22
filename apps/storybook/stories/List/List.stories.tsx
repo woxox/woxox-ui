@@ -19,15 +19,15 @@ export default {
 const Template: ComponentStory<typeof List> = (args) => <List {...args} />;
 
 export const ListUsageExample = ListUsage;
-export const Primary = Template.bind({});
+// export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {
-  listItem: [
-    { id: '1', content: <span>1</span> },
-    { id: '2', content: <span>2</span> },
-    { id: '3', content: <span>3</span> },
-  ],
-};
+// Primary.args = {
+//   listItem: [
+//     { id: '1', content: <span>1</span> },
+//     { id: '2', content: <span>2</span> },
+//     { id: '3', content: <span>3</span> },
+//   ],
+// };
 
 // export const Secondary = Template.bind({});
 // Secondary.args = {

@@ -10,18 +10,24 @@
     "build": "turbo run build",
     "dev": "turbo run dev",
     "lint": "turbo run lint",
-    "format": "prettier --write \"**/*.{ts,tsx,md}\""
+    "format": "prettier --write \"**/*.{ts,tsx,md}\"",
+    "publish": "turbo run publish"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   },
   "devDependencies": {
     "eslint-config-woxo": "workspace:*",
     "eslint-plugin-prettier": "latest",
     "prettier-plugin-tailwindcss": "latest",
     "prettier": "latest",
-    "turbo": "latest"
+    "turbo": "latest",
+    "@types/react": "^18.0.27",
+    "@types/react-dom": "^18.0.10"
   },
   "engines": {
     "node": ">=14.0.0"
   },
-  "dependencies": {},
   "packageManager": "pnpm@7.28.0"
 }
