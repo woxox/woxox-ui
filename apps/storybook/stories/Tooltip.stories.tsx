@@ -23,7 +23,9 @@ const Template: ComponentStory<typeof Tooltip> = (args) => <Tooltip {...args} />
 
 export const Primary = Template.bind({});
 // More on args: https://storybook.js.org/docs/react/writing-stories/args
-Primary.args = {};
+Primary.args = {
+  children: <span>Hover Me</span>,
+};
 
 // export const Secondary = Template.bind({});
 // Secondary.args = {
