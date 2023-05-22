@@ -1,7 +1,7 @@
 import React from 'react';
 
 import { ComponentStory, ComponentMeta } from '@storybook/react';
-import { List } from '@woxo/ui';
+import { List } from '@woxox/ui';
 
 import { ListUsage } from './ListUsage';
 

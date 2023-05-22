@@ -1,5 +1,5 @@
 {
-  "name": "woxo-design-system",
+  "name": "woxox-design-system",
   "version": "0.0.0",
   "private": true,
   "workspaces": [
@@ -11,14 +11,14 @@
     "dev": "turbo run dev",
     "lint": "turbo run lint",
     "format": "prettier --write \"**/*.{ts,tsx,md}\"",
-    "publish-packages": "cd packages/woxo-ui && pnpm publish"
+    "publish-packages": "pnpm build --filter=woxox-ui && cd packages/woxox-ui && pnpm publish --no-git-checks"
   },
   "dependencies": {
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
-    "eslint-config-woxo": "workspace:*",
+    "eslint-config-woxox": "workspace:*",
     "eslint-plugin-prettier": "latest",
     "prettier-plugin-tailwindcss": "latest",
     "prettier": "latest",

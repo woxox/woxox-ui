@@ -1,6 +1,6 @@
 import './tailwind.css';
 
-import { ThemeProvider } from '@woxo/ui';
+import { ThemeProvider } from '@woxox/ui';
 
 export const parameters = {
   actions: { argTypesRegex: '^on[A-Z].*' },

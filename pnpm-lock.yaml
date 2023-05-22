@@ -17,18 +17,18 @@ importers:
       '@types/react-dom':
         specifier: ^18.0.10
         version: 18.0.11
-      eslint-config-woxo:
+      eslint-config-woxox:
         specifier: workspace:*
-        version: link:packages/eslint-config-woxo
+        version: link:packages/eslint-config-woxox
       eslint-plugin-prettier:
         specifier: latest
-        version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@7.32.0)(prettier@2.8.4)
+        version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@7.32.0)(prettier@2.8.8)
       prettier:
         specifier: latest
-        version: 2.8.7
+        version: 2.8.8
       prettier-plugin-tailwindcss:
         specifier: latest
-        version: 0.2.6(prettier@2.8.7)
+        version: 0.2.6(prettier@2.8.8)
       turbo:
         specifier: latest
         version: 1.8.8
@@ -38,9 +38,9 @@ importers:
       '@storybook/react':
         specifier: ^6.5.16
         version: 6.5.16(@babel/core@7.21.0)(eslint@8.4.1)(react-dom@17.0.2)(react@17.0.2)(require-from-string@2.0.2)(typescript@4.9.5)
-      '@woxo/ui':
+      '@woxox/ui':
         specifier: workspace:*
-        version: link:../../packages/woxo-ui
+        version: link:../../packages/woxox-ui
       rollup-plugin-terser:
         specifier: ^7.0.2
         version: 7.0.2(rollup@2.79.1)
@@ -103,7 +103,7 @@ importers:
         specifier: ^4.1.0
         version: 4.1.4(@types/node@17.0.45)
 
-  packages/eslint-config-woxo:
+  packages/eslint-config-woxox:
     dependencies:
       eslint:
         specifier: ^7.23.0
@@ -116,7 +116,7 @@ importers:
         version: 1.8.8(eslint@7.32.0)
       eslint-plugin-prettier:
         specifier: ^4.2.1
-        version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@7.32.0)(prettier@2.8.4)
+        version: 4.2.1(eslint-config-prettier@8.6.0)(eslint@7.32.0)(prettier@2.8.8)
       tsconfig:
         specifier: workspace:*
         version: link:../tsconfig
@@ -159,17 +159,17 @@ importers:
         version: 4.6.0(eslint@7.32.0)
       prettier:
         specifier: ^2.8.4
-        version: 2.8.4
+        version: 2.8.8
       prettier-plugin-tailwindcss:
         specifier: ^0.2.4
-        version: 0.2.4(prettier@2.8.4)
+        version: 0.2.6(prettier@2.8.8)
       typescript:
         specifier: ^4.7.4
         version: 4.9.5
 
   packages/tsconfig: {}
 
-  packages/woxo-icon:
+  packages/woxox-icon:
     dependencies:
       '@swc-node/register':
         specifier: ^1.6.3
@@ -199,9 +199,9 @@ importers:
       '@types/react':
         specifier: ^18.0.28
         version: 18.0.28
-      eslint-config-woxo:
+      eslint-config-woxox:
         specifier: workspace:*
-        version: link:../eslint-config-woxo
+        version: link:../eslint-config-woxox
       rollup:
         specifier: ^3.14.0
         version: 3.18.0
@@ -221,7 +221,7 @@ importers:
         specifier: ^4.9.5
         version: 4.9.5
 
-  packages/woxo-ui:
+  packages/woxox-ui:
     dependencies:
       '@emotion/react':
         specifier: ^11.10.6
@@ -232,9 +232,9 @@ importers:
       '@emotion/styled':
         specifier: ^11.10.6
         version: 11.10.6(@emotion/react@11.10.6)(@types/react@18.0.28)(react@18.2.0)
-      '@woxo/icon':
+      '@woxox/icon':
         specifier: workspace:*
-        version: link:../woxo-icon
+        version: link:../woxox-icon
       framer-motion:
         specifier: ^10.9.1
         version: 10.9.1(react-dom@18.2.0)(react@18.2.0)
@@ -290,9 +290,9 @@ importers:
       babel-plugin-twin:
         specifier: ^1.1.0
         version: 1.1.0
-      eslint-config-woxo:
+      eslint-config-woxox:
         specifier: workspace:*
-        version: link:../eslint-config-woxo
+        version: link:../eslint-config-woxox
       rollup:
         specifier: ^3.14.0
         version: 3.18.0
@@ -7360,7 +7360,7 @@ packages:
       object.fromentries: 2.0.6
       semver: 6.3.0
 
-  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.6.0)(eslint@7.32.0)(prettier@2.8.4):
+  /eslint-plugin-prettier@4.2.1(eslint-config-prettier@8.6.0)(eslint@7.32.0)(prettier@2.8.8):
     resolution: {integrity: sha512-f/0rXLXUt0oFYs8ra4w49wYZBG5GKZpAYsJSm6rnYL5uVDjd+zowwMwVZHnAjf4edNrKpCDYfXDgmRE/Ak7QyQ==}
     engines: {node: '>=12.0.0'}
     peerDependencies:
@@ -7373,7 +7373,7 @@ packages:
     dependencies:
       eslint: 7.32.0
       eslint-config-prettier: 8.6.0(eslint@7.32.0)
-      prettier: 2.8.4
+      prettier: 2.8.8
       prettier-linter-helpers: 1.0.0
 
   /eslint-plugin-react-hooks@4.6.0(eslint@7.32.0):
@@ -10885,62 +10885,7 @@ packages:
     dependencies:
       fast-diff: 1.2.0
 
-  /prettier-plugin-tailwindcss@0.2.4(prettier@2.8.4):
-    resolution: {integrity: sha512-wMyugRI2yD8gqmMpZSS8kTA0gGeKozX/R+w8iWE+yiCZL09zY0SvfiHfHabNhjGhzxlQ2S2VuTxPE3T72vppCQ==}
-    engines: {node: '>=12.17.0'}
-    peerDependencies:
-      '@ianvs/prettier-plugin-sort-imports': '*'
-      '@prettier/plugin-php': '*'
-      '@prettier/plugin-pug': '*'
-      '@shopify/prettier-plugin-liquid': '*'
-      '@shufo/prettier-plugin-blade': '*'
-      '@trivago/prettier-plugin-sort-imports': '*'
-      prettier: '>=2.2.0'
-      prettier-plugin-astro: '*'
-      prettier-plugin-css-order: '*'
-      prettier-plugin-import-sort: '*'
-      prettier-plugin-jsdoc: '*'
-      prettier-plugin-organize-attributes: '*'
-      prettier-plugin-organize-imports: '*'
-      prettier-plugin-style-order: '*'
-      prettier-plugin-svelte: '*'
-      prettier-plugin-twig-melody: '*'
-    peerDependenciesMeta:
-      '@ianvs/prettier-plugin-sort-imports':
-        optional: true
-      '@prettier/plugin-php':
-        optional: true
-      '@prettier/plugin-pug':
-        optional: true
-      '@shopify/prettier-plugin-liquid':
-        optional: true
-      '@shufo/prettier-plugin-blade':
-        optional: true
-      '@trivago/prettier-plugin-sort-imports':
-        optional: true
-      prettier-plugin-astro:
-        optional: true
-      prettier-plugin-css-order:
-        optional: true
-      prettier-plugin-import-sort:
-        optional: true
-      prettier-plugin-jsdoc:
-        optional: true
-      prettier-plugin-organize-attributes:
-        optional: true
-      prettier-plugin-organize-imports:
-        optional: true
-      prettier-plugin-style-order:
-        optional: true
-      prettier-plugin-svelte:
-        optional: true
-      prettier-plugin-twig-melody:
-        optional: true
-    dependencies:
-      prettier: 2.8.4
-    dev: true
-
-  /prettier-plugin-tailwindcss@0.2.6(prettier@2.8.7):
+  /prettier-plugin-tailwindcss@0.2.6(prettier@2.8.8):
     resolution: {integrity: sha512-F+7XCl9RLF/LPrGdUMHWpsT6TM31JraonAUyE6eBmpqymFvDwyl0ETHsKFHP1NG+sEfv8bmKqnTxEbWQbHPlBA==}
     engines: {node: '>=12.17.0'}
     peerDependencies:
@@ -10992,7 +10937,7 @@ packages:
       prettier-plugin-twig-melody:
         optional: true
     dependencies:
-      prettier: 2.8.7
+      prettier: 2.8.8
     dev: true
 
   /prettier@2.3.0:
@@ -11000,16 +10945,10 @@ packages:
     engines: {node: '>=10.13.0'}
     hasBin: true
 
-  /prettier@2.8.4:
-    resolution: {integrity: sha512-vIS4Rlc2FNh0BySk3Wkd6xmwxB0FpOndW5fisM5H8hsZSxU2VWVB5CWIkIjWvrHjIhxk2g3bfMKM87zNTrZddw==}
+  /prettier@2.8.8:
+    resolution: {integrity: sha512-tdN8qQGvNjw4CHbY+XXk0JgCXn9QiF21a55rBe5LJAU+kDyC4WQn4+awm2Xfk2lQMk5fKup9XgzTZtGkjBdP9Q==}
     engines: {node: '>=10.13.0'}
     hasBin: true
-
-  /prettier@2.8.7:
-    resolution: {integrity: sha512-yPngTo3aXUUmyuTjeTUT75txrf+aMh9FiD7q9ZE/i6r0bPb22g4FsE6Y338PQX1bmfy08i9QQCB7/rcUAVntfw==}
-    engines: {node: '>=10.13.0'}
-    hasBin: true
-    dev: true
 
   /pretty-error@2.1.2:
     resolution: {integrity: sha512-EY5oDzmsX5wvuynAByrmY0P0hcp+QpnAKbJng2A2MPjVKXCxrDSUkzghVJ4ZGPIv+JC4gX8fPUWscC0RtjsWGw==}

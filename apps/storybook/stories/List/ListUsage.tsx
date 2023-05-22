@@ -1,6 +1,6 @@
 import React, { useCallback, useState } from 'react';
 
-import { Button, List, ListItem } from '@woxo/ui';
+import { Button, List, ListItem } from '@woxox/ui';
 
 export const ListUsage: React.FC = () => {
   const [listItem, setListItem] = useState<ListItem[]>([]);
