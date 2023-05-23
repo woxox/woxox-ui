@@ -28,22 +28,22 @@ jobs:
       - name: Cache Build output (woxox-ui)
         uses: actions/cache@v2
         with:
-          path: '**/woxox-ui/dist'
-          key: ${{ runner.os }}-woxox-ui-${{ hashFiles('**/woxox-ui/dist') }}
+          path: './pacakges/woxox-ui/dist'
+          key: ${{ runner.os }}-woxox-ui-${{ hashFiles('./pacakges/woxox-ui/dist') }}
           restore-keys: ${{ runner.os }}-woxox-ui-
 
       - name: Cache Build output (woxox-icon)
         uses: actions/cache@v2
         with:
-          path: '**/woxox-icon/dist'
-          key: ${{ runner.os }}-woxox-icon-${{ hashFiles('**/woxox-icon/dist') }}
+          path: './packages/woxox-icon/dist'
+          key: ${{ runner.os }}-woxox-icon-${{ hashFiles('./packages/woxox-icon/dist') }}
           restore-keys: ${{ runner.os }}-woxox-icon-
 
       - name: Cache Build output (storybook)
         uses: actions/cache@v2
         with:
-          path: '**/storybook-static'
-          key: ${{ runner.os }}-storybook-static-${{ hashFiles('**/storybook-static') }}
+          path: './apps/storybook/storybook-static'
+          key: ${{ runner.os }}-storybook-static-${{ hashFiles('./apps/storybook/storybook-static') }}
           restore-keys: ${{ runner.os }}-storybook-static-
 
       - name: Install Dependencies
