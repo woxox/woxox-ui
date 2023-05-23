@@ -24,5 +24,8 @@ module.exports = {
   },
   "features": {
     "storyStoreV7": true
+  },
+  "export": {
+    basePath: '/woxox-ui/',
   }
 }
