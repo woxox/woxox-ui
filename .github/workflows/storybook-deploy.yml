@@ -3,7 +3,7 @@ name: Build and Deploy GitHub Pages (Storybook)
 on:
   push:
     branches:
-      - master  # Set a branch name to trigger deployment
+      - master # Set a branch name to trigger deployment
 
 jobs:
   deploy:
@@ -15,17 +15,25 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
-          submodules: true  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Build Storybook
+      - name: Restore pnpm cache
+        uses: actions/cache@v2
+        with:
+          path: ~/.pnpm-store
+          key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+
+      - name: Install Dependencies
         uses: actions/setup-node@v2
         with:
           node-version: '16.x'
           registry-url: 'https://registry.npmjs.org'
-      - run: npm install -g pnpm
+      - run: npm install -g npm
       - run: pnpm install
-      - run: pnpm build-storybook
+
+      - name: Build Storybook
+        run: pnpm build-storybook
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
