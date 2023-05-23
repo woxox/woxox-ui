@@ -4,7 +4,6 @@
   "pipeline": {
     "build": {
       "dependsOn": ["^build"],
-      "inputs": ["*.tsx", "*.ts", "*.cjs", "*.json", "*.html", "*.css", "*.mjs"],
       "outputs": ["dist/**", "storybook-static/**"]
     },
     "lint": {
