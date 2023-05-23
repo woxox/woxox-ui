@@ -27,8 +27,11 @@ jobs:
       - name: Restore Build cache
         uses: actions/cache@v2
         with:
-          path: ./apps/storybook/storybook-static
-          key: ${{ runner.os }}-storybook-${{ hashFiles('storybook-static/**') }}
+          path: |
+            **/woxox-ui/dist
+            **/woxox-icon/dist
+            **/storybook-static
+          key: ${{ runner.os }}-cache-${{ hashFiles('**/woxox-ui/dist', '**/woxox-icon/dist', '**/storybook-static') }}
 
       - name: Install Dependencies
         uses: actions/setup-node@v2
