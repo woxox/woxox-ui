@@ -24,6 +24,12 @@ jobs:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
 
+      - name: Restore Build cache
+        uses: actions/cache@v2
+        with:
+          path: ./apps/storybook/storybook-static
+          key: ${{ runner.os }}-storybook-${{ hashFiles('storybook-static/**') }}
+
       - name: Install Dependencies
         uses: actions/setup-node@v2
         with:
