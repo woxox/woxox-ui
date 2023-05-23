@@ -18,20 +18,33 @@ jobs:
           submodules: true # Fetch Hugo themes (true OR recursive)
           fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
 
-      - name: Restore pnpm cache
+      - name: Cache pnpm
         uses: actions/cache@v2
         with:
           path: ~/.pnpm-store
           key: ${{ runner.os }}-pnpm-${{ hashFiles('pnpm-lock.yaml') }}
+          restore-keys: ${{ runner.os }}-pnpm-
 
-      - name: Restore Build cache
+      - name: Cache Build output (woxox-ui)
         uses: actions/cache@v2
         with:
-          path: |
-            **/woxox-ui/dist
-            **/woxox-icon/dist
-            **/storybook-static
-          key: ${{ runner.os }}-cache-${{ hashFiles('**/woxox-ui/dist', '**/woxox-icon/dist', '**/storybook-static') }}
+          path: '**/woxox-ui/dist'
+          key: ${{ runner.os }}-woxox-ui-${{ hashFiles('**/woxox-ui/dist') }}
+          restore-keys: ${{ runner.os }}-woxox-ui-${{ hashFiles('**/woxox-ui/dist') }}
+
+      - name: Cache Build output (woxox-icon)
+        uses: actions/cache@v2
+        with:
+          path: '**/woxox-icon/dist'
+          key: ${{ runner.os }}-woxox-icon-${{ hashFiles('**/woxox-icon/dist') }}
+          restore-keys: ${{ runner.os }}-woxox-icon-${{ hashFiles('**/woxox-icon/dist') }}
+
+      - name: Cache Build output (storybook)
+        uses: actions/cache@v2
+        with:
+          path: '**/storybook-static'
+          key: ${{ runner.os }}-storybook-static-${{ hashFiles('**/storybook-static') }}
+          restore-keys: ${{ runner.os }}-storybook-static-${{ hashFiles('**/storybook-static') }}
 
       - name: Install Dependencies
         uses: actions/setup-node@v2
