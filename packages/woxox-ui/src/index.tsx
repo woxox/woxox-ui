@@ -4,6 +4,6 @@ export * from './components/Menu';
 export * from './components/Tab';
 export * from './components/Input';
 export * from './theme/ThemeProvider';
-export * from './components/Skeleton';
 export * from './components/List';
+export * from './components/Skeleton';
 export * from './components/Tooltip';
