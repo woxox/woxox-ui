@@ -6,6 +6,7 @@
   "types": "dist/types/index.d.ts",
   "license": "MIT",
   "type": "commonjs",
+  "private": true,
   "files": [
     "dist"
   ],
