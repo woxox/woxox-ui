@@ -27,7 +27,7 @@ jobs:
           run_install: false
 
       - name: Install Dependencies
-        run: pnpm install --frozen-lock
+        run: pnpm install
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
