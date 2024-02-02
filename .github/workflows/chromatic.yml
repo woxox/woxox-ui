@@ -31,8 +31,8 @@ jobs:
         run: pnpm build --filter @woxox/*
 
       - name: Publish to Chromatic
-        working-directory: ./apps/storybook
-        run: pnpm chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+        # working-directory: ./apps/storybook
+        run: pnpm chromatic --filter storybook-web --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
 
     #   - name: Publish to Chromatic
     #     uses: chromaui/action@latest
