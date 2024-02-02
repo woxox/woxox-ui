@@ -10,10 +10,14 @@
     "node_modules",
   ],
   "compilerOptions": {
+    "paths": {
+      "@/*": [
+        "./src/*"
+      ]
+    },
     "declaration": true,
     "declarationDir": "dist/types",
     "emitDeclarationOnly": true,
-    "jsxImportSource": "@emotion/react",
     "sourceMap": true
   }
 }

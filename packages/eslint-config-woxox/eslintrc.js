@@ -4,7 +4,6 @@ module.exports = {
     'next/core-web-vitals',
     'plugin:@typescript-eslint/recommended',
     'plugin:prettier/recommended',
-    'prettier',
   ],
   plugins: ['@stylistic'],
   env: {
@@ -15,7 +14,12 @@ module.exports = {
     React: true,
     JSX: true,
   },
-  ignorePatterns: ['node_modules/', 'dist/', 'withTwin.js', '.eslintrc.js'],
+  ignorePatterns: [
+    'node_modules/',
+    'dist/',
+    'withTwin.js',
+    '.eslintrc.js',
+  ],
   rules: {
     '@typescript-eslint/no-unused-vars': 'warn',
     '@stylistic/jsx-quotes': ['error', 'prefer-double'],
