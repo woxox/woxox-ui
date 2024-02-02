@@ -5,11 +5,11 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-    "build": "storybook build",
+    "build": "sb build",
     "lint": "eslint . --ext ts,tsx --report-unused-disable-directives --max-warnings 0",
     "preview": "vite preview",
-    "storybook": "storybook dev -p 6006",
-    "build-storybook": "storybook build",
+    "storybook": "sb dev -p 6006",
+    "build-storybook": "sb build",
     "chromatic": "chromatic --exit-zero-on-changes"
   },
   "dependencies": {
@@ -18,12 +18,12 @@
     "react-dom": "^18.2.0"
   },
   "devDependencies": {
+    "@storybook/cli": "^7.6.12",
     "@storybook/addon-essentials": "^7.6.12",
     "@storybook/addon-interactions": "^7.6.12",
     "@storybook/addon-links": "^7.6.12",
     "@storybook/addon-onboarding": "1.0.11",
     "@storybook/blocks": "^7.6.12",
-    "@storybook/cli": "^7.6.12",
     "@storybook/react": "^7.6.12",
     "@storybook/react-vite": "^7.6.12",
     "@storybook/test": "^7.6.12",
