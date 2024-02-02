@@ -1,6 +1,7 @@
 ---
 'eslint-config-woxox': patch
 '@woxox/icon': patch
+'@woxox/ui': patch
 ---
 
-Initalize Changelog
+Eslint, Prettier setup

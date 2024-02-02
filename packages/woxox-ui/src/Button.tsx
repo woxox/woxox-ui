@@ -6,13 +6,18 @@ interface Props {
   label?: string;
 }
 
-export const Button: React.FC = ({ primary = false, label = 'Boop', size = 'small' }: Props) => {
+export const Button: React.FC<Props> = ({
+  primary = false,
+  label = 'Boop',
+  size = 'small',
+}) => {
   return (
     <button
       style={{
         backgroundColor: primary ? 'red' : 'blue',
         fontSize: size === 'large' ? '24px' : '14px',
       }}
+      id={'asdf'}
     >
       {label}
     </button>
