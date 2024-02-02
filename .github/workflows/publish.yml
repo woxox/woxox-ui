@@ -49,4 +49,4 @@ jobs:
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
 
       - name: Publish
-        run: pnpm publish --filter @woxox/*
+        run: pnpm publish --filter @woxox/* --no-git-checks
