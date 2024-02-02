@@ -34,7 +34,11 @@ jobs:
         with:
           # this expects you to have a npm script called version that runs some logic and then calls `changeset version`.
           version: pnpm changeset version
-          publish: pnpm publish --filter @woxox/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Publish
+        if: steps.changesets.outputs.hasChangesets == 'false'
+        # You can do something when a publish should happen.
+        run: pnpm publish --filter @woxox/*
