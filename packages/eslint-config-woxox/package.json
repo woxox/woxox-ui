@@ -1,6 +1,6 @@
 {
   "name": "eslint-config-woxox",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "main": "eslintrc.js",
   "license": "MIT",
   "private": true,

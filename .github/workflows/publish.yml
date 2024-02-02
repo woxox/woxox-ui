@@ -20,15 +20,33 @@ jobs:
         with:
           node-version: 16.x
 
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
       - name: Install Dependencies
-        run: pnpm install --frozen-lock
+        run: pnpm install --no-frozen-lockfile
+
+      - name: Build Packages
+        run: pnpm build --filter @woxox/*
 
       - name: Create Release Pull Request
         uses: changesets/action@v1
         with:
           # this expects you to have a npm script called version that runs some logic and then calls `changeset version`.
           version: pnpm changeset version
-          publish: pnpm publish --filter @woxox/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Creating .npmrc
+        run: |
+          cat << EOF > "$HOME/.npmrc"
+          //registry.npmjs.org/:_authToken=$NPM_TOKEN
+          EOF
+        env:
           NPM_TOKEN: ${{ secrets.NPM_PUBLISH_TOKEN }}
+
+      - name: Publish
+        run: pnpm publish --filter @woxox/* --no-git-checks

@@ -1,5 +1,13 @@
 # @woxox/ui
 
+## 1.1.2
+
+### Patch Changes
+
+- eea5741: Eslint, Prettier setup
+- Updated dependencies [eea5741]
+  - @woxox/icon@0.0.2
+
 ## 1.1.1
 
 ### Patch Changes
