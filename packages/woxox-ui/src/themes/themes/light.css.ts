@@ -8,6 +8,9 @@ export const LIGHT_COLOR_TOKEN: typeof DARK_COLOR_TOKEN = {
   'background.primary.hover': COLOR_PALETTE.zinc700,
   'background.container': COLOR_PALETTE.zinc200,
 
+  // input background
+  'background.input': COLOR_PALETTE.zinc300,
+
   // text
   'text.primary': COLOR_PALETTE.zinc950,
   'text.primary.wrong': COLOR_PALETTE.red500,
