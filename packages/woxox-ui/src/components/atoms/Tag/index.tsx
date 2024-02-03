@@ -7,6 +7,7 @@ export type TagProps = React.HTMLAttributes<HTMLDivElement> &
   RecipeVariants<typeof tagVariants>;
 
 export const Tag = ({
+  color,
   variant,
   size,
   className,
@@ -15,7 +16,10 @@ export const Tag = ({
 }: TagProps) => {
   return (
     <div
-      className={clsx(tagVariants({ variant, size }), className)}
+      className={clsx(
+        tagVariants({ color, variant, size }),
+        className,
+      )}
       {...rest}
     >
       {children}

@@ -31,7 +31,10 @@ export const Sizes: Story = {
       <Tag {...args} size="sm">
         Small
       </Tag>
-      <Tag {...args} size="md">
+      <Tag {...args} size="md" color="red">
+        Medium
+      </Tag>
+      <Tag {...args} size="md" variant="outlined" color="red">
         Medium
       </Tag>
       <Tag {...args} size="lg">
