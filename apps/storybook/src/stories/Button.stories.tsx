@@ -25,3 +25,38 @@ export const Primary: Story = {
     children: 'Button',
   },
 };
+
+export const Outlined: Story = {
+  args: {
+    children: 'Button',
+    variant: 'outlined',
+  },
+};
+
+export const Disabled: Story = {
+  args: {
+    children: 'Button',
+    disabled: true,
+  },
+};
+
+export const Small: Story = {
+  args: {
+    children: 'Button',
+    size: 'sm',
+  },
+};
+
+export const Medium: Story = {
+  args: {
+    children: 'Button',
+    size: 'md',
+  },
+};
+
+export const Large: Story = {
+  args: {
+    children: 'Button',
+    size: 'lg',
+  },
+};
