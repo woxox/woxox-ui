@@ -1,9 +1,10 @@
 import { recipe } from '@vanilla-extract/recipes';
 
-import { colorToken } from '@/themes/theme.css';
+import { baseToken, colorToken } from '@/themes/theme.css';
 
 export const inputVariants = recipe({
   base: {
+    alignSelf: 'center',
     backgroundColor: colorToken['background.input'],
     border: 'none',
     color: colorToken['text.primary'],
@@ -12,10 +13,48 @@ export const inputVariants = recipe({
   variants: {
     variant: {
       contained: {},
-      outlined: {},
+      outlined: {
+        backgroundColor: 'transparent',
+        borderColor: colorToken['background.input'],
+        borderStyle: 'solid',
+        borderWidth: baseToken.width['0.5'],
+      },
+      // underlined: {
+      //   backgroundColor: 'transparent',
+      //   borderBottomColor: colorToken['background.input'],
+      //   borderRadius: `${baseToken.radius['0']} !important`,
+      //   borderBottomStyle: 'solid',
+      //   borderBottomWidth: baseToken.width['0.5'],
+      // },
+    },
+    disabled: {
+      false: {},
+      true: {
+        opacity: baseToken.opacity.disabled,
+        cursor: 'not-allowed',
+      },
+    },
+    size: {
+      sm: {
+        borderRadius: baseToken.radius.md,
+        paddingBlock: baseToken.spacing['1'],
+        paddingInline: baseToken.spacing['1.5'],
+      },
+      md: {
+        borderRadius: baseToken.radius.md,
+        paddingBlock: baseToken.spacing['2'],
+        paddingInline: baseToken.spacing['2.5'],
+      },
+      lg: {
+        borderRadius: baseToken.radius.md,
+        paddingBlock: baseToken.spacing['2.5'],
+        paddingInline: baseToken.spacing['4'],
+      },
     },
   },
   defaultVariants: {
     variant: 'contained',
+    disabled: false,
+    size: 'md',
   },
 });
