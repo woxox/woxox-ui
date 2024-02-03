@@ -9,21 +9,21 @@ importers:
   .:
     dependencies:
       react:
-        specifier: ^18.2.0
+        specifier: ^18
         version: 18.2.0
       react-dom:
-        specifier: ^18.2.0
+        specifier: ^18
         version: 18.2.0(react@18.2.0)
     devDependencies:
       '@changesets/cli':
         specifier: ^2.26.2
         version: 2.26.2
       '@types/react':
-        specifier: ^18.0.27
-        version: 18.0.28
+        specifier: ^18
+        version: 18.2.51
       '@types/react-dom':
-        specifier: ^18.0.10
-        version: 18.0.11
+        specifier: ^18
+        version: 18.2.18
       eslint-config-woxox:
         specifier: workspace:*
         version: link:packages/eslint-config-woxox
@@ -243,7 +243,7 @@ importers:
         specifier: ^6.0.10
         version: 6.0.10
       react:
-        specifier: ^18.2.0
+        specifier: ^18
         version: 18.2.0
     devDependencies:
       '@rollup/plugin-alias':
@@ -4873,12 +4873,6 @@ packages:
 
   /@types/range-parser@1.2.7:
     resolution: {integrity: sha512-hKormJbkJqzQGhziax5PItDUTMAM9uE2XXQmM37dyd4hVM+5aVl7oVxMVUiVQn2oCQFN/LKCZdvSM0pFRqbSmQ==}
-    dev: true
-
-  /@types/react-dom@18.0.11:
-    resolution: {integrity: sha512-O38bPbI2CWtgw/OoQoY+BRelw7uysmXbWvw3nLWO21H1HSh+GOlqPuXshJfjmpNlKiiSDG9cc1JZAaMmVdcTlw==}
-    dependencies:
-      '@types/react': 18.2.51
     dev: true
 
   /@types/react-dom@18.2.18:
