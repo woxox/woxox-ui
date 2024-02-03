@@ -1,5 +1,11 @@
 # @woxox/ui
 
+## 1.1.3
+
+### Patch Changes
+
+- da89f0c: feat: Button Variant 추가
+
 ## 1.1.2
 
 ### Patch Changes
