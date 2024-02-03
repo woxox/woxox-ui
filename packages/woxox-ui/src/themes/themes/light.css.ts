@@ -6,8 +6,6 @@ export const LIGHT_COLOR_TOKEN: typeof DARK_COLOR_TOKEN = {
   'background.surface': COLOR_PALETTE.white,
   'background.primary': COLOR_PALETTE.zinc600,
   'background.primary.hover': COLOR_PALETTE.zinc700,
-
-  // container backgroud
   'background.container': COLOR_PALETTE.zinc200,
 
   // text
@@ -18,4 +16,8 @@ export const LIGHT_COLOR_TOKEN: typeof DARK_COLOR_TOKEN = {
   'text.button.primary': COLOR_PALETTE.white,
   'text.button.contained': COLOR_PALETTE.white,
   'text.button.outlined': COLOR_PALETTE.zinc800,
+
+  // tag text
+  'text.tag.contained': COLOR_PALETTE.white,
+  'text.tag.outlined': COLOR_PALETTE.zinc950,
 };

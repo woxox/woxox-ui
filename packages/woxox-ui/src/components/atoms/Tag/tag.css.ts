@@ -9,18 +9,18 @@ export const tagVariants = recipe({
     backgroundColor: colorToken['background.primary'],
     border: 'none',
     borderRadius: baseToken.radius.full,
-    color: colorToken['text.primary'],
     display: 'inline',
   },
   variants: {
     variant: {
       contained: {
         backgroundColor: colorToken['background.primary'],
-        color: colorToken['text.primary'],
+        color: colorToken['text.tag.contained'],
       },
       outlined: {
         backgroundColor: 'transparent',
         border: `2px solid ${colorToken['background.primary']}`,
+        color: colorToken['text.tag.outlined'],
       },
     },
     size: {
