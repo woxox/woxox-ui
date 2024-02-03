@@ -2,4 +2,4 @@
 '@woxox/ui': patch
 ---
 
-feat: Button Variant 추가
+feat: add Tag component
