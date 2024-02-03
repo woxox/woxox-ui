@@ -10,6 +10,7 @@ export const tagVariants = recipe({
     border: 'none',
     borderRadius: baseToken.radius.full,
     display: 'inline',
+    ...baseToken.fontSize[12],
   },
   variants: {
     variant: {
@@ -25,16 +26,16 @@ export const tagVariants = recipe({
     },
     size: {
       sm: {
-        paddingBlock: baseToken.spacing['1'],
+        paddingBlock: baseToken.spacing['0.5'],
         paddingInline: baseToken.spacing['1.5'],
       },
       md: {
-        paddingBlock: baseToken.spacing['2'],
+        paddingBlock: baseToken.spacing['1'],
         paddingInline: baseToken.spacing['2.5'],
       },
       lg: {
-        paddingBlock: baseToken.spacing['2.5'],
-        paddingInline: baseToken.spacing['4'],
+        paddingBlock: baseToken.spacing['1.5'],
+        paddingInline: baseToken.spacing['3.5'],
       },
     },
   },
