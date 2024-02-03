@@ -1,5 +1,4 @@
 import { Meta, StoryObj } from '@storybook/react';
-
 import { Tag } from '@woxox/ui';
 
 const meta: Meta<typeof Tag> = {
@@ -18,28 +17,26 @@ export const Primary: Story = {
   },
 };
 
-export const Outlined: Story = {
-  args: {
-    children: 'Tag',
-    variant: 'outlined',
-  },
+export const Colors: Story = {
+  render: (args) => (
+    <div style={{ display: 'flex', gap: '10px' }}>
+      {(['default', 'red', 'green', 'blue'] as const).map((color) => (
+        <Tag {...args} color={color}>
+          {color}
+        </Tag>
+      ))}
+    </div>
+  ),
 };
 
 export const Sizes: Story = {
   render: (args) => (
     <div style={{ display: 'flex', gap: '10px' }}>
-      <Tag {...args} size="sm">
-        Small
-      </Tag>
-      <Tag {...args} size="md" color="red">
-        Medium
-      </Tag>
-      <Tag {...args} size="md" variant="outlined" color="red">
-        Medium
-      </Tag>
-      <Tag {...args} size="lg">
-        Large
-      </Tag>
+      {(['sm', 'md', 'lg'] as const).map((size) => (
+        <Tag {...args} size={size}>
+          {size}
+        </Tag>
+      ))}
     </div>
   ),
 };

@@ -1,59 +1,32 @@
-import {
-  assignVars,
-  createThemeContract,
-} from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
-import { baseToken, colorToken } from '@/themes/theme.css';
+import { baseToken } from '@/themes/theme.css';
 import { COLOR_PALETTE } from '@/themes/tokens/color-palette';
-
-const tagVars = createThemeContract({
-  border: null,
-  background: null,
-  text: null,
-});
 
 export const tagVariants = recipe({
   base: {
     alignSelf: 'center',
-    appearance: 'none',
-    borderWidth: baseToken.spacing['0.5'],
-    borderStyle: 'solid',
-    borderColor: tagVars.border,
-    backgroundColor: tagVars.background,
-    color: tagVars.text,
     borderRadius: baseToken.radius.full,
     display: 'inline',
     ...baseToken.fontSize[12],
   },
   variants: {
-    variant: {
-      contained: {},
-      // contained: {
-      //   backgroundColor: colorToken['background.primary'],
-      //   color: colorToken['text.tag.contained'],
-      // },
-      outlined: {
-        backgroundColor: 'transparent',
-        color: tagVars.border,
-        // border: `2px solid ${colorToken['background.primary']}`,
-        // color: colorToken['text.tag.outlined'],
-      },
-    },
     color: {
       default: {
-        vars: assignVars(tagVars, {
-          border: colorToken['background.primary'],
-          background: colorToken['background.primary'],
-          text: colorToken['text.primary'],
-        }),
+        backgroundColor: COLOR_PALETTE.zinc700,
+        color: COLOR_PALETTE.zinc400,
       },
       red: {
-        vars: assignVars(tagVars, {
-          border: COLOR_PALETTE.red500,
-          background: COLOR_PALETTE.red500,
-          text: COLOR_PALETTE.red800,
-        }),
+        backgroundColor: COLOR_PALETTE.red400,
+        color: COLOR_PALETTE.red700,
+      },
+      green: {
+        backgroundColor: COLOR_PALETTE.green400,
+        color: COLOR_PALETTE.green700,
+      },
+      blue: {
+        backgroundColor: COLOR_PALETTE.blue400,
+        color: COLOR_PALETTE.blue700,
       },
     },
     size: {
@@ -73,7 +46,6 @@ export const tagVariants = recipe({
   },
   defaultVariants: {
     color: 'default',
-    variant: 'contained',
     size: 'md',
   },
 });
