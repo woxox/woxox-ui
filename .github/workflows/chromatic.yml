@@ -1,0 +1,42 @@
+# .github/workflows/chromatic.yml
+
+name: 'Chromatic'
+
+on: push
+
+jobs:
+  chromatic:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Setup Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Install Dependencies
+        run: pnpm install
+
+      - name: Build App
+        run: pnpm build --filter @woxox/*
+
+      - name: Publish to Chromatic
+        working-directory: ./apps/storybook
+        run: pnpm chromatic --project-token=${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+
+    #   - name: Publish to Chromatic
+    #     uses: chromaui/action@latest
+    #     with:
+    #       # ⚠️ Make sure to configure a `CHROMATIC_PROJECT_TOKEN` repository secret
+    #       projectToken: ${{ secrets.CHROMATIC_PROJECT_TOKEN }}
+    #       workingDir: apps/storybook
