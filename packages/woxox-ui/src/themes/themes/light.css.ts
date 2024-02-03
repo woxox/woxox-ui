@@ -18,4 +18,5 @@ export const LIGHT_COLOR_TOKEN: typeof DARK_COLOR_TOKEN = {
   'text.button.primary': COLOR_PALETTE.white,
   'text.button.contained': COLOR_PALETTE.white,
   'text.button.outlined': COLOR_PALETTE.zinc800,
+  'text.popover': COLOR_PALETTE.white,
 };
