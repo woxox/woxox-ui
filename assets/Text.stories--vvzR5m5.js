@@ -1,5 +1,0 @@
-import{t as l,_ as i,r as P,p as d}from"./button.css-tW_GLTvn.js";import{j as f}from"./jsx-runtime-AgcCsxC8.js";import{r as v}from"./index-XiNr8FW2.js";import{e as x}from"./clsx-khdrbEnD.js";import"./_commonjsHelpers-5-cIlDoe.js";var k=function(e,t){var a=v.useMemo(function(){return Object.entries(e).reduce(function(r,o){var s=o[0],p=o[1];return t.has(s)?r.sprinkleProps[s]=p:r.nativeProps[s]=p,r},{sprinkleProps:{},nativeProps:{}})},[e,t]);return{sprinkleProps:a.sprinkleProps,nativeProps:a.nativeProps}},g=function(e){var t=e.className,a=l(e,["className"]),r=k(a,i.properties),o=r.sprinkleProps,s=r.nativeProps;return f.jsx("span",P({className:x(i(o),d,t)},s))};const _={title:"Example/Text",component:g,tags:["autodocs"],parameters:{layout:"centered"}},n={args:{children:"text"}};var c,m,u;n.parameters={...n.parameters,docs:{...(c=n.parameters)==null?void 0:c.docs,source:{originalSource:`{
-  args: {
-    children: 'text'
-  }
-}`,...(u=(m=n.parameters)==null?void 0:m.docs)==null?void 0:u.source}}};const O=["Primary"];export{n as Primary,O as __namedExportsOrder,_ as default};
