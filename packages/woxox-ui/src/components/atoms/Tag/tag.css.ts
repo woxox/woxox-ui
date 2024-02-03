@@ -14,18 +14,18 @@ export const tagVariants = recipe({
     color: {
       default: {
         backgroundColor: COLOR_PALETTE.zinc700,
-        color: COLOR_PALETTE.zinc400,
+        color: COLOR_PALETTE.zinc300,
       },
       red: {
-        backgroundColor: COLOR_PALETTE.red400,
+        backgroundColor: COLOR_PALETTE.red200,
         color: COLOR_PALETTE.red700,
       },
       green: {
-        backgroundColor: COLOR_PALETTE.green400,
+        backgroundColor: COLOR_PALETTE.green200,
         color: COLOR_PALETTE.green700,
       },
       blue: {
-        backgroundColor: COLOR_PALETTE.blue400,
+        backgroundColor: COLOR_PALETTE.blue200,
         color: COLOR_PALETTE.blue700,
       },
     },
