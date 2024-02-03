@@ -5,5 +5,6 @@ export * from './components/atoms/Portal';
 export * from './components/atoms/Button';
 
 export { default as Popover } from './components/molecules/Popover';
+export { default as Select } from './components/molecules/Select';
 
 export * from './themes/theme.css';

@@ -26,7 +26,8 @@
     "@woxox/icon": "workspace:*",
     "clsx": "^2.1.0",
     "framer-motion": "^10.9.1",
-    "path-normalize": "^6.0.10"
+    "path-normalize": "^6.0.10",
+    "react-icons": "^5.0.1"
   },
   "devDependencies": {
     "@rollup/plugin-alias": "^5.1.0",
