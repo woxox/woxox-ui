@@ -30,24 +30,24 @@ export const decorators = [
     );
 
     useEffect(() => {
-      const handleChange = (e: MediaQueryListEvent) =>
+      document.body.className = baseTokenClass;
+      const handleChange = (e: MediaQueryListEvent) => {
+        document.body.classList.toggle(lightThemeClass, !e.matches);
+        document.body.classList.toggle(darkThemeClass, e.matches);
         setDark(e.matches);
+      };
 
       const media = window.matchMedia('(prefers-color-scheme: dark)');
+
+      document.body.classList.toggle(lightThemeClass, !media.matches);
+      document.body.classList.toggle(darkThemeClass, media.matches);
+
       media.addEventListener('change', handleChange);
 
       return () => media.removeEventListener('change', handleChange);
     }, []);
 
-    return (
-      <div
-        className={`${
-          dark ? darkThemeClass : lightThemeClass
-        } ${baseTokenClass}`}
-      >
-        <Story {...context} />
-      </div>
-    );
+    return <Story {...context} />;
   },
 ];
 

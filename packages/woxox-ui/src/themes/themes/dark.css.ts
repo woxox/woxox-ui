@@ -15,4 +15,5 @@ export const DARK_COLOR_TOKEN = {
   'text.button.primary': COLOR_PALETTE.white,
   'text.button.contained': COLOR_PALETTE.white,
   'text.button.outlined': COLOR_PALETTE.white,
+  'text.popover': COLOR_PALETTE.white,
 };
