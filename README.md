@@ -37,4 +37,4 @@ If you encounter any bugs or have ideas for improving the XDS package, please in
 
 ## License
 
-The XDS package is distributed under the MIT License.
+MIT License, check [LICENSE](https://github.com/woxox/woxox-ui/blob/develop/LICENSE).
