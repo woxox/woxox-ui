@@ -29,6 +29,16 @@ export const decorators = [
         false,
     );
 
+    useEffect(() => {
+      const handleChange = (e: MediaQueryListEvent) =>
+        setDark(e.matches);
+
+      const media = window.matchMedia('(prefers-color-scheme: dark)');
+      media.addEventListener('change', handleChange);
+
+      return () => media.removeEventListener('change', handleChange);
+    }, []);
+
     return (
       <div
         className={`${
