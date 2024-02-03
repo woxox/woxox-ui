@@ -1,5 +1,12 @@
 # @woxox/ui
 
+## 1.1.4
+
+### Patch Changes
+
+- d7a2b2b: fix: make Tag color brighter"
+- c269512: feat: add Tag component
+
 ## 1.1.3
 
 ### Patch Changes
