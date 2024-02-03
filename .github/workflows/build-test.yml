@@ -1,0 +1,59 @@
+name: Build Test
+
+on:
+  push:
+    branches:
+      - develop
+      - feature/*
+
+jobs:
+  build-test:
+    runs-on: ubuntu-22.04
+    permissions:
+      contents: write
+    concurrency:
+      group: ${{ github.workflow }}-${{ github.ref }}
+    steps:
+      - uses: actions/checkout@v3
+        with:
+          submodules: true # Fetch Hugo themes (true OR recursive)
+          fetch-depth: 0 # Fetch all history for .GitInfo and .Lastmod
+
+      - uses: pnpm/action-setup@v2
+        name: Install pnpm
+        with:
+          version: 8
+          run_install: false
+
+      - name: Get pnpm store directory
+        shell: bash
+        run: |
+          echo "STORE_PATH=$(pnpm store path --silent)" >> $GITHUB_ENV
+
+      - name: Get hashed ref name
+        run: |
+          hashedString=$(echo -n "your_string_to_hash" | sha256sum | awk '{print $1}')
+          echo "REF_NAME_SHA=$hashedString" >> $GITHUB_ENV
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ${{ env.STORE_PATH }}
+          key: ${{ runner.os }}-pnpm-store-${{ hashFiles('**/pnpm-lock.yaml') }}
+          restore-keys: |
+            ${{ runner.os }}-pnpm-store-
+
+      - uses: actions/cache@v3
+        name: Setup pnpm cache
+        with:
+          path: ./.turbo-cache
+          key: ${{ runner.os }}-turbo-cache-${{ github.ref_name }}
+          restore-keys: |
+            ${{ runner.os }}-turbo-cache-${{ github.ref_name }}
+            ${{ runner.os }}-turbo-cache-
+
+      - name: Install Dependencies
+        run: pnpm install --frozen-lock
+
+      - name: Build Test
+        run: pnpm build --cache-dir .turbo-cache
