@@ -8,10 +8,10 @@ export interface ReactPortalProps {
   wrapperId?: string;
 }
 
-export const ReactPortal: React.FC<ReactPortalProps> = ({
+const ReactPortal = ({
   children,
   wrapperId = 'react-portal-wrapper',
-}) => {
+}: ReactPortalProps) => {
   const [element, setElement] = useState<HTMLElement>();
 
   useEffect(() => {
@@ -27,3 +27,5 @@ export const ReactPortal: React.FC<ReactPortalProps> = ({
   if (element) return createPortal(children, element);
   return null;
 };
+
+export default ReactPortal;

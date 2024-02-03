@@ -7,7 +7,7 @@ import React, {
 
 import clsx from 'clsx';
 
-import { ReactPortal } from '@/components/atoms/Portal';
+import ReactPortal from '@/components/atoms/Portal';
 
 import { usePopoverContext } from '../context';
 import { popoverVariants } from '../popover.css';
@@ -15,10 +15,7 @@ import { popoverVariants } from '../popover.css';
 export interface PopoverContentProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const Content: React.FC<PopoverContentProps> = ({
-  className,
-  ...rest
-}) => {
+const Content = ({ className, ...rest }: PopoverContentProps) => {
   const { open, handleClose, anchorEl } = usePopoverContext();
   const ref = useRef<HTMLDivElement>(null);
 
@@ -50,3 +47,5 @@ export const Content: React.FC<PopoverContentProps> = ({
     </ReactPortal>
   );
 };
+
+export default Content;

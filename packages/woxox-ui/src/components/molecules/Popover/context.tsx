@@ -21,7 +21,7 @@ export const PopoverContext =
 
 export interface PopoverProviderProps
   extends Pick<Partial<PopoverContextState>, 'open' | 'anchorEl'> {
-  children: React.ReactNode;
+  children?: React.ReactNode;
 }
 export const PopoverContextProvider = ({
   open: openProp,

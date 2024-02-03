@@ -3,8 +3,10 @@ import {
   PopoverProviderProps,
 } from '../context';
 
-interface RootProps extends PopoverProviderProps {}
+export interface RootProps extends PopoverProviderProps {}
 
-export const Root: React.FC<RootProps> = (props) => {
+const Root = (props: RootProps) => {
   return <PopoverContextProvider {...props} />;
 };
+
+export default Root;

@@ -8,10 +8,7 @@ import { popoverTriggerStyle } from '../popover.css';
 export interface PopoverTriggerProps
   extends React.HTMLAttributes<HTMLDivElement> {}
 
-export const Trigger: React.FC<PopoverTriggerProps> = ({
-  className,
-  ...rest
-}) => {
+const Trigger = ({ className, ...rest }: PopoverTriggerProps) => {
   const { setAnchorEl, handleOpen } = usePopoverContext();
 
   return (
@@ -23,3 +20,5 @@ export const Trigger: React.FC<PopoverTriggerProps> = ({
     />
   );
 };
+
+export default Trigger;
