@@ -12,10 +12,15 @@ const meta: Meta<typeof Input> = {
 export default meta;
 type Story = StoryObj<typeof meta>;
 
-export const Primary: Story = {};
+export const Primary: Story = {
+  args: { label: 'Label' },
+};
 
 export const Outlined: Story = {
-  args: { variant: 'outlined' },
+  args: {
+    label: 'Label',
+    variant: 'outlined',
+  },
 };
 
 // export const Underlined: Story = {
@@ -23,14 +28,24 @@ export const Outlined: Story = {
 // };
 
 export const Disabled: Story = {
-  args: { disabled: true },
+  args: {
+    label: 'Label',
+    disabled: true,
+  },
+};
+
+export const Placeholder: Story = {
+  args: {
+    label: 'Label',
+    placeholder: 'Placeholder',
+  },
 };
 
 export const Sizes: Story = {
   render: (args) => (
     <div style={{ display: 'flex', gap: '10px' }}>
       {(['sm', 'md', 'lg'] as const).map((size) => (
-        <Input {...args} size={size} />
+        <Input {...args} label="Label" size={size} />
       ))}
     </div>
   ),
