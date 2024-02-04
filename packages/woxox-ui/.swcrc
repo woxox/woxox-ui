@@ -1,0 +1,18 @@
+{
+    "$schema": "https://json.schemastore.org/swcrc",
+    "exclude": [
+        "node_modules"
+    ],
+    "jsc": {
+        "baseUrl": "./",
+        // "target": "es2020",
+        "parser": {
+            "syntax": "typescript",
+            "tsx": true,
+            "decorators": false,
+            "dynamicImport": false
+        },
+        "externalHelpers": false
+    },
+    "sourceMaps": true
+}

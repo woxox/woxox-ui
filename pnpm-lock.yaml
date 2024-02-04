@@ -238,7 +238,7 @@ importers:
         version: 2.1.0
       framer-motion:
         specifier: ^10.9.1
-        version: 10.9.1(react-dom@18.2.0)(react@18.2.0)
+        version: 10.9.1(react@18.2.0)
       path-normalize:
         specifier: ^6.0.10
         version: 6.0.10
@@ -264,9 +264,6 @@ importers:
       '@rollup/plugin-node-resolve':
         specifier: ^15.0.1
         version: 15.0.1(rollup@3.18.0)
-      '@rollup/plugin-typescript':
-        specifier: ^11.0.0
-        version: 11.0.0(rollup@3.18.0)(typescript@4.9.5)
       '@vanilla-extract/rollup-plugin':
         specifier: ^1.3.3
         version: 1.3.3(rollup@3.18.0)
@@ -288,6 +285,9 @@ importers:
       rollup-plugin-peer-deps-external:
         specifier: ^2.2.4
         version: 2.2.4(rollup@3.18.0)
+      rollup-plugin-swc3:
+        specifier: ^0.8.1
+        version: 0.8.1(@swc/core@1.3.107)(rollup@3.18.0)
       rollup-plugin-terser:
         specifier: ^7.0.2
         version: 7.0.2(rollup@3.18.0)
@@ -2385,7 +2385,6 @@ packages:
 
   /@fastify/deepmerge@1.3.0:
     resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
-    dev: false
 
   /@floating-ui/core@1.6.0:
     resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
@@ -3367,7 +3366,6 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
-    dev: false
 
   /@rollup/pluginutils@5.0.2(rollup@3.18.0):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
@@ -7736,7 +7734,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /framer-motion@10.9.1(react-dom@18.2.0)(react@18.2.0):
+  /framer-motion@10.9.1(react@18.2.0):
     resolution: {integrity: sha512-fuCDRGKOu5n9gN2/R7O22mE+BHMGK5D57S3Oq8n2ITd4aYR7D22QM5I4VPD3CWahNt/lyDUs20u9Aw+6ah9oAQ==}
     peerDependencies:
       react: ^18.0.0
@@ -7748,7 +7746,6 @@ packages:
         optional: true
     dependencies:
       react: 18.2.0
-      react-dom: 18.2.0(react@18.2.0)
       tslib: 2.5.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
@@ -10514,6 +10511,20 @@ packages:
     peerDependencies:
       rollup: '*'
     dependencies:
+      rollup: 3.18.0
+    dev: true
+
+  /rollup-plugin-swc3@0.8.1(@swc/core@1.3.107)(rollup@3.18.0):
+    resolution: {integrity: sha512-xoHRmrGamXrz4rNfmXiTNf/6pAYY2daFOJavVsrG/HvBgsoa8lx9rtas9XiqOl5DqD04tGn8MiUwarITOPyh8A==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@swc/core': '>=1.2.165'
+      rollup: ^2.0.0 || ^3.0.0
+    dependencies:
+      '@fastify/deepmerge': 1.3.0
+      '@rollup/pluginutils': 4.2.1
+      '@swc/core': 1.3.107
+      get-tsconfig: 4.7.2
       rollup: 3.18.0
     dev: true
 

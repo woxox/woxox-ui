@@ -35,7 +35,6 @@
     "@rollup/plugin-commonjs": "^24.0.1",
     "@rollup/plugin-json": "^6.0.0",
     "@rollup/plugin-node-resolve": "^15.0.1",
-    "@rollup/plugin-typescript": "^11.0.0",
     "@vanilla-extract/rollup-plugin": "^1.3.3",
     "eslint-config-woxox": "workspace:*",
     "prettier": "^3.2.4",
@@ -43,6 +42,7 @@
     "rollup-plugin-commonjs": "^10.1.0",
     "rollup-plugin-dts": "^5.2.0",
     "rollup-plugin-peer-deps-external": "^2.2.4",
+    "rollup-plugin-swc3": "^0.8.1",
     "rollup-plugin-terser": "^7.0.2",
     "tsconfig": "workspace:*",
     "typescript": "^4.9.5"
