@@ -2,10 +2,9 @@ import { RecipeVariants } from '@vanilla-extract/recipes';
 import clsx from 'clsx';
 
 import { Text } from '@/components/atoms/Text';
-import { baseToken, colorToken } from '@/themes/theme.css';
+import { baseToken } from '@/themes/theme.css';
 
 import { inputVariants } from './input.css';
-import { COLOR_PALETTE } from '@/themes/tokens/color-palette';
 
 export type InputProps = React.HTMLAttributes<HTMLInputElement> & {
   label: string;
