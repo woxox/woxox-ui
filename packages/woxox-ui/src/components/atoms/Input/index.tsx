@@ -1,3 +1,5 @@
+import { useCallback } from 'react';
+
 import { RecipeVariants } from '@vanilla-extract/recipes';
 import clsx from 'clsx';
 
@@ -6,22 +8,32 @@ import { baseToken } from '@/themes/theme.css';
 
 import { inputVariants } from './input.css';
 
-export type InputProps = React.HTMLAttributes<HTMLInputElement> & {
+export type InputProps = Omit<
+  React.HTMLAttributes<HTMLInputElement>,
+  'onChange'
+> & {
   label: string;
-  value: string | number | readonly string[] | undefined;
-  placeholder: string | undefined;
+  onChange: (value: string) => void;
 } & RecipeVariants<typeof inputVariants>;
 
 const Input = ({
   variant,
   disabled,
   size,
+  onChange,
   className,
   label,
-  value,
-  placeholder,
   ...rest
 }: InputProps) => {
+  const handleChangeInput = useCallback<
+    React.ChangeEventHandler<HTMLInputElement>
+  >(
+    (e) => {
+      onChange(e.currentTarget.value);
+    },
+    [onChange],
+  );
+
   return (
     <div
       style={{
@@ -37,8 +49,7 @@ const Input = ({
           className,
         )}
         disabled={disabled}
-        value={value}
-        placeholder={placeholder}
+        onChange={handleChangeInput}
         {...rest}
       />
     </div>
