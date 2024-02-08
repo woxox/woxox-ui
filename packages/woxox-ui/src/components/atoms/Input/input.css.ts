@@ -4,7 +4,6 @@ import { baseToken, colorToken } from '@/themes/theme.css';
 
 export const inputVariants = recipe({
   base: {
-    alignSelf: 'center',
     backgroundColor: colorToken['background.input'],
     border: 'none',
     color: colorToken['text.primary'],
