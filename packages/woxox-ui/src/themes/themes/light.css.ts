@@ -7,17 +7,16 @@ export const LIGHT_COLOR_TOKEN: typeof DARK_COLOR_TOKEN = {
   'background.primary': COLOR_PALETTE.zinc600,
   'background.primary.hover': COLOR_PALETTE.zinc700,
   'background.container': COLOR_PALETTE.zinc200,
-
-  // input background
   'background.input': COLOR_PALETTE.zinc300,
 
   // text
   'text.primary': COLOR_PALETTE.zinc950,
   'text.primary.wrong': COLOR_PALETTE.red500,
-
-  // button text
   'text.button.primary': COLOR_PALETTE.white,
   'text.button.contained': COLOR_PALETTE.white,
   'text.button.outlined': COLOR_PALETTE.zinc800,
   'text.popover': COLOR_PALETTE.white,
+
+  // border
+  'border.input': COLOR_PALETTE.zinc300,
 };

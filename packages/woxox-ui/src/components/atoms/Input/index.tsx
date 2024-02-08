@@ -30,7 +30,7 @@ const Input = ({
         gap: baseToken.spacing['0.5'],
       }}
     >
-      <Text style={{ ...baseToken.fontSize[12] }}>{label}</Text>
+      <Text fontSize="12">{label}</Text>
       <input
         className={clsx(
           inputVariants({ variant, disabled, size }),

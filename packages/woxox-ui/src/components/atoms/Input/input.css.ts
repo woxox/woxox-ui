@@ -14,7 +14,7 @@ export const inputVariants = recipe({
       contained: {},
       outlined: {
         backgroundColor: 'transparent',
-        borderColor: colorToken['background.input'],
+        borderColor: colorToken['border.input'],
         borderStyle: 'solid',
         borderWidth: baseToken.width['0.5'],
       },
