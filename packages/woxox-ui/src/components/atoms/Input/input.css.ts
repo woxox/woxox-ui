@@ -1,30 +1,19 @@
+import { style } from '@vanilla-extract/css';
 import { recipe } from '@vanilla-extract/recipes';
 
 import { baseToken, colorToken } from '@/themes/theme.css';
 
-export const inputVariants = recipe({
+export const inputOuterVariants = recipe({
   base: {
-    backgroundColor: colorToken['background.input'],
-    border: 'none',
-    color: colorToken['text.primary'],
-    outline: 'none',
+    display: 'flex',
+    flexDirection: 'column',
+    gap: baseToken.spacing['0.5'],
   },
   variants: {
     variant: {
       contained: {},
-      outlined: {
-        backgroundColor: 'transparent',
-        borderColor: colorToken['border.input'],
-        borderStyle: 'solid',
-        borderWidth: baseToken.width['0.5'],
-      },
-      // underlined: {
-      //   backgroundColor: 'transparent',
-      //   borderBottomColor: colorToken['background.input'],
-      //   borderRadius: `${baseToken.radius['0']} !important`,
-      //   borderBottomStyle: 'solid',
-      //   borderBottomWidth: baseToken.width['0.5'],
-      // },
+      outlined: {},
+      underlined: {},
     },
     disabled: {
       false: {},
@@ -34,26 +23,53 @@ export const inputVariants = recipe({
       },
     },
     size: {
-      sm: {
-        borderRadius: baseToken.radius.md,
-        paddingBlock: baseToken.spacing['1'],
-        paddingInline: baseToken.spacing['1.5'],
-      },
-      md: {
-        borderRadius: baseToken.radius.md,
-        paddingBlock: baseToken.spacing['2'],
-        paddingInline: baseToken.spacing['2.5'],
-      },
-      lg: {
-        borderRadius: baseToken.radius.md,
-        paddingBlock: baseToken.spacing['2.5'],
-        paddingInline: baseToken.spacing['4'],
-      },
+      sm: {},
+      md: {},
+      lg: {},
     },
   },
   defaultVariants: {
     variant: 'contained',
     disabled: false,
     size: 'md',
+  },
+});
+
+export const inputInnerStyle = style({
+  backgroundColor: colorToken['background.input'],
+  border: 'none',
+  color: colorToken['text.primary'],
+  outline: 'none',
+  selectors: {
+    [`.${inputOuterVariants.classNames.variants.variant.outlined} > &`]:
+      {
+        backgroundColor: 'transparent',
+        borderColor: colorToken['border.input'],
+        borderStyle: 'solid',
+        borderWidth: baseToken.width['0.5'],
+      },
+    [`.${inputOuterVariants.classNames.variants.variant.underlined} > &`]:
+      {
+        backgroundColor: 'transparent',
+        borderBottomColor: colorToken['border.input'],
+        borderRadius: `${baseToken.radius['0']} !important`,
+        borderBottomStyle: 'solid',
+        borderBottomWidth: baseToken.width['0.5'],
+      },
+    [`.${inputOuterVariants.classNames.variants.size.sm} > &`]: {
+      borderRadius: baseToken.radius.md,
+      paddingBlock: baseToken.spacing['1'],
+      paddingInline: baseToken.spacing['1.5'],
+    },
+    [`.${inputOuterVariants.classNames.variants.size.md} > &`]: {
+      borderRadius: baseToken.radius.md,
+      paddingBlock: baseToken.spacing['2'],
+      paddingInline: baseToken.spacing['2.5'],
+    },
+    [`.${inputOuterVariants.classNames.variants.size.lg} > &`]: {
+      borderRadius: baseToken.radius.md,
+      paddingBlock: baseToken.spacing['2.5'],
+      paddingInline: baseToken.spacing['4'],
+    },
   },
 });

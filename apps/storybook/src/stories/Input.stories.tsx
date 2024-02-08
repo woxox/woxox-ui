@@ -23,9 +23,12 @@ export const Outlined: Story = {
   },
 };
 
-// export const Underlined: Story = {
-//   args: { variant: 'underlined' },
-// };
+export const Underlined: Story = {
+  args: {
+    label: 'Label',
+    variant: 'underlined',
+  },
+};
 
 export const Disabled: Story = {
   args: {

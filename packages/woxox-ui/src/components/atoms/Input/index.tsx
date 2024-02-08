@@ -6,7 +6,7 @@ import clsx from 'clsx';
 import { Text } from '@/components/atoms/Text';
 import { baseToken } from '@/themes/theme.css';
 
-import { inputVariants } from './input.css';
+import { inputInnerStyle, inputOuterVariants } from './input.css';
 
 export type InputProps = Omit<
   React.HTMLAttributes<HTMLInputElement>,
@@ -14,7 +14,7 @@ export type InputProps = Omit<
 > & {
   label: string;
   onChange: (value: string) => void;
-} & RecipeVariants<typeof inputVariants>;
+} & RecipeVariants<typeof inputOuterVariants>;
 
 const Input = ({
   variant,
@@ -36,18 +36,14 @@ const Input = ({
 
   return (
     <div
-      style={{
-        display: 'flex',
-        flexDirection: 'column',
-        gap: baseToken.spacing['0.5'],
-      }}
+      className={clsx(
+        inputOuterVariants({ variant, disabled, size }),
+        className,
+      )}
     >
       <Text fontSize="12">{label}</Text>
       <input
-        className={clsx(
-          inputVariants({ variant, disabled, size }),
-          className,
-        )}
+        className={clsx(inputInnerStyle, className)}
         disabled={disabled}
         onChange={handleChangeInput}
         {...rest}
