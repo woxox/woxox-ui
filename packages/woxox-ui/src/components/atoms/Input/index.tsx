@@ -4,7 +4,6 @@ import { RecipeVariants } from '@vanilla-extract/recipes';
 import clsx from 'clsx';
 
 import { Text } from '@/components/atoms/Text';
-import { baseToken } from '@/themes/theme.css';
 
 import { inputInnerStyle, inputOuterVariants } from './input.css';
 
