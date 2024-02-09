@@ -30,6 +30,9 @@ importers:
       eslint-plugin-prettier:
         specifier: latest
         version: 5.0.0(eslint@8.56.0)(prettier@3.0.0)
+      eslint_d:
+        specifier: ^13.1.2
+        version: 13.1.2
       prettier:
         specifier: latest
         version: 3.0.0
@@ -238,7 +241,7 @@ importers:
         version: 2.1.0
       framer-motion:
         specifier: ^10.9.1
-        version: 10.9.1(react@18.2.0)
+        version: 10.9.1(react-dom@18.2.0)(react@18.2.0)
       path-normalize:
         specifier: ^6.0.10
         version: 6.0.10
@@ -6267,6 +6270,12 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
+  /core_d@6.1.0:
+    resolution: {integrity: sha512-vYgenhJ8CYCj+7LPbPdyFo2u0Doavfbi/vhFpR/BsW9/iUAhuKd+sw2l4CHXhaXIo4/058p2nlsAtbL7iswm5A==}
+    dependencies:
+      supports-color: 8.1.1
+    dev: true
+
   /cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
     dependencies:
@@ -7399,6 +7408,18 @@ packages:
       - supports-color
     dev: true
 
+  /eslint_d@13.1.2:
+    resolution: {integrity: sha512-kRQ6oxtY9TL+NtHaLrPPmqHmZ4bY9iE+A2LACQ9CMzzbatZbIXq55X8Tz76KaTlH2NQ1F2vccQ8UEKvL49zPOg==}
+    hasBin: true
+    dependencies:
+      core_d: 6.1.0
+      eslint: 8.56.0
+      nanolru: 1.0.0
+      optionator: 0.9.3
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
   /espree@9.6.1:
     resolution: {integrity: sha512-oruZaFkjorTpF32kDSI5/75ViwGeZginGGy2NoOSg3Q9bnwlnmDm4HLnkl0RE3n+njDXR037aY1+x58Z/zFdwQ==}
     engines: {node: ^12.22.0 || ^14.17.0 || >=16.0.0}
@@ -7734,7 +7755,7 @@ packages:
     engines: {node: '>= 0.6'}
     dev: true
 
-  /framer-motion@10.9.1(react@18.2.0):
+  /framer-motion@10.9.1(react-dom@18.2.0)(react@18.2.0):
     resolution: {integrity: sha512-fuCDRGKOu5n9gN2/R7O22mE+BHMGK5D57S3Oq8n2ITd4aYR7D22QM5I4VPD3CWahNt/lyDUs20u9Aw+6ah9oAQ==}
     peerDependencies:
       react: ^18.0.0
@@ -7746,6 +7767,7 @@ packages:
         optional: true
     dependencies:
       react: 18.2.0
+      react-dom: 18.2.0(react@18.2.0)
       tslib: 2.5.0
     optionalDependencies:
       '@emotion/is-prop-valid': 0.8.8
@@ -9258,6 +9280,11 @@ packages:
     resolution: {integrity: sha512-eSRppjcPIatRIMC1U6UngP8XFcz8MQWGQdt1MTBQ7NaAmvXDfvNxbvWV3x2y6CdEUciCSsDHDQZbhYaB8QEo2g==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
     hasBin: true
+    dev: true
+
+  /nanolru@1.0.0:
+    resolution: {integrity: sha512-GyQkE8M32pULhQk7Sko5raoIbPalAk90ICG+An4fq6fCsFHsP6fB2K46WGXVdoJpy4SGMnZ/EKbo123fZJomWg==}
+    engines: {node: '>= 0.4.0'}
     dev: true
 
   /natural-compare@1.4.0:

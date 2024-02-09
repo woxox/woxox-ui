@@ -2,10 +2,7 @@
   "name": "woxox-design-system",
   "version": "0.0.0",
   "private": true,
-  "workspaces": [
-    "apps/*",
-    "packages/*"
-  ],
+  "workspaces": ["apps/*", "packages/*"],
   "scripts": {
     "build": "turbo run build",
     "dev": "turbo run dev",
@@ -25,6 +22,7 @@
     "@types/react-dom": "^18",
     "eslint-config-woxox": "workspace:*",
     "eslint-plugin-prettier": "latest",
+    "eslint_d": "^13.1.2",
     "prettier": "latest",
     "prettier-plugin-tailwindcss": "latest",
     "turbo": "latest"
