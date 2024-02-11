@@ -6,6 +6,7 @@ export const DARK_COLOR_TOKEN = {
   'background.primary': COLOR_PALETTE.zinc700,
   'background.primary.hover': COLOR_PALETTE.zinc600,
   'background.container': COLOR_PALETTE.zinc800,
+  'background.input': COLOR_PALETTE.zinc700,
 
   // checkbox
   'background.checkbox.hover': COLOR_PALETTE.zinc700,
@@ -14,10 +15,12 @@ export const DARK_COLOR_TOKEN = {
   'text.primary': COLOR_PALETTE.white,
   'text.inverse': COLOR_PALETTE.zinc950,
   'text.primary.wrong': COLOR_PALETTE.red500,
-
-  // button text
   'text.button.primary': COLOR_PALETTE.white,
   'text.button.contained': COLOR_PALETTE.white,
   'text.button.outlined': COLOR_PALETTE.white,
   'text.popover': COLOR_PALETTE.white,
+
+  // border
+  'border.input': COLOR_PALETTE.zinc700,
+  'border.input.focused': COLOR_PALETTE.blue500,
 };
