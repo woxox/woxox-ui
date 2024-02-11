@@ -1,5 +1,13 @@
 # @woxox/ui
 
+## 1.1.6
+
+### Patch Changes
+
+- 084189f: [#14] feat: Input component
+- 8aafb2a: [#14] fix: input improvement
+- 5e49b64: [#14] fix: remove needless aligning to center
+
 ## 1.1.5
 
 ### Patch Changes
