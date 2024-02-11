@@ -41,20 +41,23 @@ export const inputInnerStyle = style({
   color: colorToken['text.primary'],
   outline: 'none',
   selectors: {
+    '&': {
+      borderColor: colorToken['border.input'],
+      borderStyle: 'solid',
+      borderWidth: baseToken.width['0.5'],
+    },
     [`.${inputOuterVariants.classNames.variants.variant.outlined} > &`]:
       {
         backgroundColor: 'transparent',
-        borderColor: colorToken['border.input'],
-        borderStyle: 'solid',
-        borderWidth: baseToken.width['0.5'],
       },
     [`.${inputOuterVariants.classNames.variants.variant.underlined} > &`]:
       {
         backgroundColor: 'transparent',
+        border: 'none',
         borderBottomColor: colorToken['border.input'],
-        borderRadius: `${baseToken.radius['0']} !important`,
         borderBottomStyle: 'solid',
         borderBottomWidth: baseToken.width['0.5'],
+        borderRadius: `${baseToken.radius['0']} !important`,
       },
     [`.${inputOuterVariants.classNames.variants.size.sm} > &`]: {
       borderRadius: baseToken.radius.md,
@@ -71,5 +74,13 @@ export const inputInnerStyle = style({
       paddingBlock: baseToken.spacing['2.5'],
       paddingInline: baseToken.spacing['4'],
     },
+    [`&:focus`]: {
+      borderColor: `${colorToken['border.input.focused']}`,
+    },
+    [`.${inputOuterVariants.classNames.variants.variant.underlined} > &:focus`]:
+      {
+        borderColor: 'transparent',
+        borderBottomColor: colorToken['border.input.focused'],
+      },
   },
 });

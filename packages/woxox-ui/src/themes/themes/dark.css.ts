@@ -18,4 +18,5 @@ export const DARK_COLOR_TOKEN = {
 
   // border
   'border.input': COLOR_PALETTE.zinc700,
+  'border.input.focused': COLOR_PALETTE.blue500,
 };

@@ -19,4 +19,5 @@ export const LIGHT_COLOR_TOKEN: typeof DARK_COLOR_TOKEN = {
 
   // border
   'border.input': COLOR_PALETTE.zinc300,
+  'border.input.focused': COLOR_PALETTE.blue500,
 };
