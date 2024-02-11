@@ -1,5 +1,11 @@
 # @woxox/ui
 
+## 1.1.7
+
+### Patch Changes
+
+- 025c9b0: fix: checkbox style
+
 ## 1.1.6
 
 ### Patch Changes
