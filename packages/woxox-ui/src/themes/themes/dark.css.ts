@@ -8,8 +8,12 @@ export const DARK_COLOR_TOKEN = {
   'background.container': COLOR_PALETTE.zinc800,
   'background.input': COLOR_PALETTE.zinc700,
 
+  // checkbox
+  'background.checkbox.hover': COLOR_PALETTE.zinc700,
+
   // text
   'text.primary': COLOR_PALETTE.white,
+  'text.inverse': COLOR_PALETTE.zinc950,
   'text.primary.wrong': COLOR_PALETTE.red500,
   'text.button.primary': COLOR_PALETTE.white,
   'text.button.contained': COLOR_PALETTE.white,
