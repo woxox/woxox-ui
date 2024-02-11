@@ -1,4 +1,4 @@
-# XDS (woXox Design System) - @woxox/ui
+# XDS (woxoX Design System) - @woxox/ui
 
 XDS (woXox Design System) is a UI component library for the @woxox/ui package. This README provides a brief introduction and a link to the Storybook for the XDS package.
 
