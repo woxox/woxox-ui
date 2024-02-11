@@ -23,3 +23,15 @@ type Story = StoryObj<typeof meta>;
 export const Primary: Story = {
   args: {},
 };
+
+export const Disabled: Story = {
+  args: {
+    disabled: true,
+  },
+};
+
+export const DefaultChecked: Story = {
+  args: {
+    defaultChecked: true,
+  },
+};
