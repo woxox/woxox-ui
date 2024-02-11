@@ -1,5 +1,13 @@
 # @woxox/ui
 
+## 1.1.5
+
+### Patch Changes
+
+- 836f567: feat: add Avatar component
+- 961f5e1: [#17] fix: avatar unselectable
+- 762c647: feat: Add Select Component
+
 ## 1.1.4
 
 ### Patch Changes
