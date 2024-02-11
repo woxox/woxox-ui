@@ -8,6 +8,7 @@ export const avatarVariants = recipe({
   base: {
     borderRadius: baseToken.radius.full,
     overflow: 'hidden',
+    userSelect: 'none',
   },
   variants: {
     disabled: {
