@@ -30,6 +30,9 @@ importers:
       eslint-plugin-prettier:
         specifier: latest
         version: 5.0.0(eslint@8.56.0)(prettier@3.0.0)
+      eslint_d:
+        specifier: ^13.1.2
+        version: 13.1.2
       prettier:
         specifier: latest
         version: 3.0.0
@@ -264,9 +267,6 @@ importers:
       '@rollup/plugin-node-resolve':
         specifier: ^15.0.1
         version: 15.0.1(rollup@3.18.0)
-      '@rollup/plugin-typescript':
-        specifier: ^11.0.0
-        version: 11.0.0(rollup@3.18.0)(typescript@4.9.5)
       '@vanilla-extract/rollup-plugin':
         specifier: ^1.3.3
         version: 1.3.3(rollup@3.18.0)
@@ -288,6 +288,9 @@ importers:
       rollup-plugin-peer-deps-external:
         specifier: ^2.2.4
         version: 2.2.4(rollup@3.18.0)
+      rollup-plugin-swc3:
+        specifier: ^0.8.1
+        version: 0.8.1(@swc/core@1.3.107)(rollup@3.18.0)
       rollup-plugin-terser:
         specifier: ^7.0.2
         version: 7.0.2(rollup@3.18.0)
@@ -2385,7 +2388,6 @@ packages:
 
   /@fastify/deepmerge@1.3.0:
     resolution: {integrity: sha512-J8TOSBq3SoZbDhM9+R/u77hP93gz/rajSA+K2kGyijPpORPWUXHUpTaleoj+92As0S9uPRP7Oi8IqMf0u+ro6A==}
-    dev: false
 
   /@floating-ui/core@1.6.0:
     resolution: {integrity: sha512-PcF++MykgmTj3CIyOQbKA/hDzOAiqI3mhuoN44WRCopIs1sgoDoU4oty4Jtqaj/y3oDU6fnVSm4QG0a3t5i0+g==}
@@ -3367,7 +3369,6 @@ packages:
     dependencies:
       estree-walker: 2.0.2
       picomatch: 2.3.1
-    dev: false
 
   /@rollup/pluginutils@5.0.2(rollup@3.18.0):
     resolution: {integrity: sha512-pTd9rIsP92h+B6wWwFbW8RkZv4hiR/xKsqre4SIuAOaOEQRxi0lqLke9k2/7WegC85GgUs9pjmOjCUi3In4vwA==}
@@ -6269,6 +6270,12 @@ packages:
     resolution: {integrity: sha512-ZQBvi1DcpJ4GDqanjucZ2Hj3wEO5pZDS89BWbkcrvdxksJorwUDDZamX9ldFkp9aw2lmBDLgkObEA4DWNJ9FYQ==}
     dev: true
 
+  /core_d@6.1.0:
+    resolution: {integrity: sha512-vYgenhJ8CYCj+7LPbPdyFo2u0Doavfbi/vhFpR/BsW9/iUAhuKd+sw2l4CHXhaXIo4/058p2nlsAtbL7iswm5A==}
+    dependencies:
+      supports-color: 8.1.1
+    dev: true
+
   /cross-spawn@5.1.0:
     resolution: {integrity: sha512-pTgQJ5KC0d2hcY8eyL1IzlBPYjTkyH72XRZPnLyKus2mBfNjQs3klqbJU2VILqZryAZUt9JOb3h/mWMy23/f5A==}
     dependencies:
@@ -7397,6 +7404,18 @@ packages:
       optionator: 0.9.3
       strip-ansi: 6.0.1
       text-table: 0.2.0
+    transitivePeerDependencies:
+      - supports-color
+    dev: true
+
+  /eslint_d@13.1.2:
+    resolution: {integrity: sha512-kRQ6oxtY9TL+NtHaLrPPmqHmZ4bY9iE+A2LACQ9CMzzbatZbIXq55X8Tz76KaTlH2NQ1F2vccQ8UEKvL49zPOg==}
+    hasBin: true
+    dependencies:
+      core_d: 6.1.0
+      eslint: 8.56.0
+      nanolru: 1.0.0
+      optionator: 0.9.3
     transitivePeerDependencies:
       - supports-color
     dev: true
@@ -9263,6 +9282,11 @@ packages:
     hasBin: true
     dev: true
 
+  /nanolru@1.0.0:
+    resolution: {integrity: sha512-GyQkE8M32pULhQk7Sko5raoIbPalAk90ICG+An4fq6fCsFHsP6fB2K46WGXVdoJpy4SGMnZ/EKbo123fZJomWg==}
+    engines: {node: '>= 0.4.0'}
+    dev: true
+
   /natural-compare@1.4.0:
     resolution: {integrity: sha512-OWND8ei3VtNC9h7V60qff3SVobHr996CTwgxubgyQYEpg290h9J0buyECNNJexkFm5sOajh5G116RYA1c8ZMSw==}
 
@@ -10514,6 +10538,20 @@ packages:
     peerDependencies:
       rollup: '*'
     dependencies:
+      rollup: 3.18.0
+    dev: true
+
+  /rollup-plugin-swc3@0.8.1(@swc/core@1.3.107)(rollup@3.18.0):
+    resolution: {integrity: sha512-xoHRmrGamXrz4rNfmXiTNf/6pAYY2daFOJavVsrG/HvBgsoa8lx9rtas9XiqOl5DqD04tGn8MiUwarITOPyh8A==}
+    engines: {node: '>=12'}
+    peerDependencies:
+      '@swc/core': '>=1.2.165'
+      rollup: ^2.0.0 || ^3.0.0
+    dependencies:
+      '@fastify/deepmerge': 1.3.0
+      '@rollup/pluginutils': 4.2.1
+      '@swc/core': 1.3.107
+      get-tsconfig: 4.7.2
       rollup: 3.18.0
     dev: true
 
