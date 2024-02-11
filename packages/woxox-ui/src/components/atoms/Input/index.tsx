@@ -11,7 +11,7 @@ export type InputProps = Omit<
   React.HTMLAttributes<HTMLInputElement>,
   'onChange'
 > & {
-  label: string;
+  label: string | undefined;
   onChange: (value: string) => void;
 } & RecipeVariants<typeof inputOuterVariants>;
 
@@ -40,7 +40,7 @@ const Input = ({
         className,
       )}
     >
-      <Text fontSize="12">{label}</Text>
+      {label && <Text fontSize="12">{label}</Text>}
       <input
         className={clsx(inputInnerStyle, className)}
         disabled={disabled}
