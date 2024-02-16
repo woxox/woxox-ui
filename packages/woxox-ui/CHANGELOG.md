@@ -1,5 +1,12 @@
 # @woxox/ui
 
+## 1.1.8
+
+### Patch Changes
+
+- Updated dependencies [d70c614]
+  - @woxox/icon@0.0.3
+
 ## 1.1.7
 
 ### Patch Changes
