@@ -1,5 +1,11 @@
 # @woxox/icon
 
+## 0.0.3
+
+### Patch Changes
+
+- d70c614: feat: Publish @woxox/icon
+
 ## 0.0.2
 
 ### Patch Changes
