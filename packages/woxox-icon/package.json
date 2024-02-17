@@ -9,7 +9,6 @@
     "url": "https://github.com/woxox/woxox-ui"
   },
   "private": false,
-  "type": "commonjs",
   "files": [
     "dist"
   ],
