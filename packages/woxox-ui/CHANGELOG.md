@@ -1,5 +1,13 @@
 # @woxox/ui
 
+## 1.1.9
+
+### Patch Changes
+
+- a64bc09: fix: esm issue with nextjs
+- Updated dependencies [a64bc09]
+  - @woxox/icon@0.0.4
+
 ## 1.1.8
 
 ### Patch Changes
