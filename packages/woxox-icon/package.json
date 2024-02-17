@@ -9,8 +9,9 @@
     "url": "https://github.com/woxox/woxox-ui"
   },
   "private": false,
-  "type": "commonjs",
-  "files": ["dist"],
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "rollup": "rollup -c",
     "dev": "rimraf dist && tsc -w | rollup -cw",
